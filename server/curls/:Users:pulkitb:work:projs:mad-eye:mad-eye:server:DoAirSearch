@@ -1,0 +1,594 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<!--
+Copyright 1998-2008 SITA Advanced Travel Solutions Limited  All rights reserved.
+SITA software is protected by copyright law and international treaties. 
+Unauthorised use, reproduction, distribution or alteration of it or any portion thereof
+may result in severe civil and criminal penalties and will be prosecuted to the maximum
+extent possible under the law.
+www.sita.aero  iTravelDirect
+-->
+<head ><title>SITA E-Commerce - Date and fare options</title>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<meta name="robots" content="noindex,nofollow" />
+<meta http-equiv="expires" content="-1" />
+<meta http-equiv="imagetoolbar" content="no" />
+<link rel="stylesheet" type="text/css" href="/css/external/yui/2.3.1/calendar.css?nocache=v3_50_133" media="screen" />
+<link rel="stylesheet" type="text/css" href="/css/external/yui/2.3.1/container.css?nocache=v3_50_133" media="screen" />
+<link rel="stylesheet" type="text/css" href="/css/itd.css?nocache=v3_50_133" media="screen" />
+<link rel="stylesheet" type="text/css" href="/css/ltr.css?nocache=v3_50_133" media="screen" />
+<link rel="stylesheet" type="text/css" href="/css/taag.css?nocache=v3_50_133" media="screen" />
+
+<link rel="stylesheet" type="text/css" href="/css/print.css?nocache=v3_50_133" media="print" />
+
+<script language="JavaScript1.2" type="text/javascript" src="/scripts/external/yui/2.3.1/yahoo-dom-event.js"></script>
+<script language="JavaScript1.2" type="text/javascript" src="/scripts/coreutils.js"></script>
+</head>
+<body onunload="resetPleaseWait()" class="air air-datepriceledjourneycalendarpage" id="taag-sita-aero" onload="if ('function'==typeof(bindCal)) {bindCal();}">
+
+
+<script language="JavaScript" type="text/javascript">
+<!--
+var plWaitEnabled = true; 
+function disableWaitPage() {
+plWaitEnabled = false;
+}
+function pleaseWait() {
+if (!plWaitEnabled) {
+return;
+}
+if (document.getElementById('header')!=null){
+document.getElementById('header').style.display="none";
+}
+if (document.getElementById('footer')!=null){
+document.getElementById('footer').style.display="none";
+}
+if (document.getElementById('main')!=null){
+document.getElementById('main').style.display="none";
+}
+document.getElementById('wait').style.display="block";
+window.scroll(0, 0);
+if (typeof pleaseWaitSetDynamic=='function') {
+pleaseWaitSetDynamic();
+}
+window.setTimeout("if ( document.images['PleaseWaitImage'] ) {document.images['PleaseWaitImage'].src = document.images['PleaseWaitImage'].src;}",200);
+}
+function resetPleaseWait() {
+if (navigator.userAgent.indexOf('Opera') != -1) {
+if (document.getElementById('wait')!=null){
+document.getElementById('wait').style.display="none";
+}
+if (document.getElementById('header')!=null){
+document.getElementById('header').style.display="block";
+}
+if (document.getElementById('footer')!=null){
+document.getElementById('footer').style.display="block";
+}
+if (document.getElementById('main')!=null){
+document.getElementById('main').style.display="block";
+}
+}
+document.getElementById('wait').style.display="block";
+}
+function overrideWaitMessage(newMessage) {
+var containingDiv = document.getElementById('wrapper');
+var imageList = [];
+if ((containingDiv == null) || (containingDiv.childNodes == null)) {
+return true;
+}
+// Remove all child elements, but maintain the list of images which we will add back in later.
+while (containingDiv.childNodes.length > 1) {
+if (containingDiv.firstChild.nodeName == 'IMG') {
+imageList[imageList.length] = containingDiv.firstChild;
+}
+containingDiv.removeChild(containingDiv.firstChild);
+}
+// Add in our overriding message.
+var newMsgElement = document.createElement('h1');
+var newMsgText = document.createTextNode(newMessage);
+newMsgElement.appendChild(newMsgText);
+containingDiv.appendChild(newMsgElement);
+// Add in all images.
+for (var i = 0; i < imageList.length; i++) {
+containingDiv.appendChild(imageList[i]);
+}
+return true;
+}
+//-->
+</script>
+
+
+
+
+<table id="bodysurround" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<div id="header">
+
+<div class="pageheader">
+<div id="printlogo">
+<img src="/images/sita/sitaairlines_logo_print.gif;" border="0" />
+</div>
+
+<div class="logoandstrapline">
+<table cellpadding="0" class="corporate" cellspacing="0">
+<tr>
+
+<td class="corporateleft"><img src="/images/en/project/taag_logo.gif" /></td>
+
+<td class="corporateright">
+
+
+
+
+</td>
+
+
+</tr>
+</table>
+</div>
+
+
+
+</div>
+
+
+
+<script type="text/javascript" src="/scripts/mouseover.js" >
+</script>
+<div class="pagetabs">
+<table cellpadding="0" class="tab" cellspacing="0">
+<tr>
+
+<td class="tableft" >
+
+
+
+
+<a href="https://taag.sita.aero/itd/itd/ChangeLocale?requestor=itd%2epresentation%2ehandler%2epage%2eair%2ePresAirDatePriceLedJourneyCalendarPageHandler&amp;locale=en"><img title="English" alt="English" src="/images/locale/en.gif" border="0" /></a>
+
+<a href="https://taag.sita.aero/itd/itd/ChangeLocale?requestor=itd%2epresentation%2ehandler%2epage%2eair%2ePresAirDatePriceLedJourneyCalendarPageHandler&amp;locale=pt"><img title="Português" alt="Português" src="/images/locale/pt.gif" border="0" /></a>
+
+
+</td>
+
+
+
+
+<td class="tabfront" onclick="window.location.href=document.getElementById('TabHome').href;return false;" onmouseover="flipOn(this)" onmouseout="flipOff(this)">
+<a id="TabHome" href="https://taag.sita.aero/itd/itd/Home">Home</a>
+</td>
+
+
+<td class="tabfront" onclick="window.location.href=document.getElementById('TabAir').href;return false;" onmouseover="flipOn(this)" onmouseout="flipOff(this)">
+<a id="TabAir" href="https://taag.sita.aero/itd/itd/Air">Flights</a>
+</td>
+
+
+
+
+
+
+
+
+
+
+<td class="tabfront" onclick="window.location.href=document.getElementById('TabMyBookings').href;return false;" onmouseover="flipOn(this)" onmouseout="flipOff(this)">
+
+
+
+
+
+
+
+
+<a id="TabMyBookings" href="https://taag.sita.aero/itd/itd/reservations">My bookings</a>
+</td>
+
+
+<td class="tabfront" onclick="window.location.href=document.getElementById('TabProfile').href;return false;" onmouseover="flipOn(this)" onmouseout="flipOff(this)">
+<a id="TabProfile" href="https://taag.sita.aero/itd/itd/Profile">My profile</a>
+</td>
+
+
+<td class="tabfront" onclick="window.location.href=document.getElementById('TabSupport').href;return false;" onmouseover="flipOn(this)" onmouseout="flipOff(this)">
+<a id="TabSupport" href="https://taag.sita.aero/itd/itd/Support">Support</a>
+</td>
+
+<td class="tabright"><br /></td>
+</tr>
+</table>
+<table cellpadding="0" class="tabline" cellspacing="0">
+<tr>
+<td class="tablinenotext"><br /></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+</div>
+<div id="main">
+
+<div class="body bodystandard">
+
+<table cellpadding="0" class="body" cellspacing="0">
+<tr>
+
+<td class="left" valign="top">
+
+<div class="pageleft">
+<table cellpadding="0" class="leftmain" cellspacing="0">
+
+
+
+<tr><td height="1%">&nbsp;</td></tr>
+<tr><td class="lefttext" height="1%">
+Rua da Missão 123-126<br />
+C.P. 79<br />
+LUANDA<br />
+República de Angola<br />
+<a href="https://taag.sita.aero/itd/itd/Logon">Logon</a><br />
+
+
+
+
+
+
+
+
+
+
+</td></tr>
+
+
+
+</table>
+</div>
+
+</td>
+
+<td class="pagecenter" valign="top">
+<table cellpadding="0" cellspacing="0">
+
+
+
+
+
+<tr>
+<td class="center" valign="top">
+<form onsubmit="pleaseWait(); return true;" id="mainform" name="form" action="https://taag.sita.aero/itd/itd" method="post"><input type="hidden" class="hidden" name="requestor" value="itd.presentation.handler.page.air.PresAirDatePriceLedJourneyCalendarPageHandler" /><input type="hidden" class="hidden" name="secret" value="E88HX6A138ELNY7124A80H0Q1W33MY7X" />
+<table cellpadding="0" class="centermain" cellspacing="0">
+
+<tr class="bodyheaderrow">
+<td>
+<table class="bodyheader" cellpadding="0" cellspacing="0"><col class="col1"/>
+<tr >
+<td class="title">Date and fare options</td>
+</tr>
+<tr >
+<td class="text">Select your preferred travel dates below and click "Next" to continue.<br /><ul><li>The fare shown is the cheapest available on that day, rounded to the nearest whole number.</li><li>All prices are per adult, rounded to the nearest whole number, and exclude taxes.</li><li>These prices are valid only when sold as part of a return fare.</li></ul></td>
+</tr>
+</table>
+</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+<td class="sectionheader">
+Select a date for your outbound journey,
+Lisbon -
+Luanda
+
+</td>
+</tr>
+
+
+<tr>
+<td>
+<div class="caljny">
+<table class="output caljnycal" cellspacing="0" cellpadding="0">
+<tr class="headerrow">
+<th class="header first"><div class="caldow">Mon</div></th>
+<th class="header block"><div class="caldow">Tue</div></th>
+<th class="header block"><div class="caldow">Wed</div></th>
+<th class="header block"><div class="caldow">Thu</div></th>
+<th class="header block"><div class="caldow">Fri</div></th>
+<th class="header block"><div class="caldow">Sat</div></th>
+<th class="header block"><div class="caldow">Sun</div></th>
+</tr>
+<tr class="datarow">
+<td class="data first"><div class="caldata calerr calnotreq"><div class="calradio"><input type="radio" class="radio" name="baddate" disabled="disabled"></div><div class="caldate">25 Jun</div></div></td>
+<td class="data block"><div class="caldata calerr calnotreq"><div class="calradio"><input type="radio" class="radio" name="baddate" disabled="disabled"></div><div class="caldate">26 Jun</div></div></td>
+<td class="data block"><div class="caldata calerr calnotreq"><div class="calradio"><input type="radio" class="radio" name="baddate" disabled="disabled"></div><div class="caldate">27 Jun</div></div></td>
+<td class="data block"><div class="caldata calerr calnotreq"><div class="calradio"><input type="radio" class="radio" name="baddate" disabled="disabled"></div><div class="caldate">28 Jun</div></div></td>
+<td class="data block"><div class="caldata calerr calinpast"><div class="calradio"><input type="radio" class="radio" name="baddate" disabled="disabled"></div><div class="caldate">29 Jun</div><div class="calmsg">Date in past</div></div></td>
+<td class="data block"><div class="caldata calerr caltoosoon"><div class="calradio"><input type="radio" class="radio" name="baddate" disabled="disabled"></div><div class="caldate">30 Jun</div><div class="calmsg">Phone our call centre</div></div></td>
+<td class="data block"><div class="caldata calfare band-e"><label><div class="calradio"><input type="radio" class="radio" name="/sessionWorkflow/productWorkflow[@product='Air']/selectedDatePriceBinding[1]/@id" value="2rnaodos8whn" id="2rnaodos8whn-0-20120701" onclick="javascript:bindCal()" /></div><div class="caldate">1 Jul</div><div class="calmsg">Fares from</div><div class="calprice">€ 622</div></label></div></td>
+</tr>
+<tr class="datarow">
+<td class="data first calreqdate"><div class="caldata calfare band-e"><label><div class="calradio"><input type="radio" class="radio" name="/sessionWorkflow/productWorkflow[@product='Air']/selectedDatePriceBinding[1]/@id" value="2rnaodos8whq" id="2rnaodos8whq-0-20120702" onclick="javascript:bindCal()" checked="checked" /></div><div class="caldate">2 Jul</div><div class="calmsg">Fares from</div><div class="calprice">€ 622</div></label></div></td>
+<td class="data block"><div class="caldata calfare band-e"><label><div class="calradio"><input type="radio" class="radio" name="/sessionWorkflow/productWorkflow[@product='Air']/selectedDatePriceBinding[1]/@id" value="2rnaodos8wjn" id="2rnaodos8wjn-0-20120703" onclick="javascript:bindCal()" /></div><div class="caldate">3 Jul</div><div class="calmsg">Fares from</div><div class="calprice">€ 2255</div></label></div></td>
+<td class="data block"><div class="caldata calfare band-e"><label><div class="calradio"><input type="radio" class="radio" name="/sessionWorkflow/productWorkflow[@product='Air']/selectedDatePriceBinding[1]/@id" value="2rnaodos8wht" id="2rnaodos8wht-0-20120704" onclick="javascript:bindCal()" /></div><div class="caldate">4 Jul</div><div class="calmsg">Fares from</div><div class="calprice">€ 622</div></label></div></td>
+<td class="data block"><div class="caldata calfare band-e"><label><div class="calradio"><input type="radio" class="radio" name="/sessionWorkflow/productWorkflow[@product='Air']/selectedDatePriceBinding[1]/@id" value="2rnaodos8whw" id="2rnaodos8whw-0-20120705" onclick="javascript:bindCal()" /></div><div class="caldate">5 Jul</div><div class="calmsg">Fares from</div><div class="calprice">€ 622</div></label></div></td>
+<td class="data block"><div class="caldata calerr calnotreq"><div class="calradio"><input type="radio" class="radio" name="baddate" disabled="disabled"></div><div class="caldate">6 Jul</div></div></td>
+<td class="data block"><div class="caldata calerr calnotreq"><div class="calradio"><input type="radio" class="radio" name="baddate" disabled="disabled"></div><div class="caldate">7 Jul</div></div></td>
+<td class="data block"><div class="caldata calerr calnotreq"><div class="calradio"><input type="radio" class="radio" name="baddate" disabled="disabled"></div><div class="caldate">8 Jul</div></div></td>
+</tr>
+</table>
+</div>
+
+</td>
+</tr>
+
+
+<tr>
+<td class="sectionheader">
+Select a date for your inbound journey,
+Luanda -
+Lisbon
+
+</td>
+</tr>
+
+
+<tr>
+<td>
+<div class="caljny">
+<table class="output caljnycal" cellspacing="0" cellpadding="0">
+<tr class="headerrow">
+<th class="header first"><div class="caldow">Mon</div></th>
+<th class="header block"><div class="caldow">Tue</div></th>
+<th class="header block"><div class="caldow">Wed</div></th>
+<th class="header block"><div class="caldow">Thu</div></th>
+<th class="header block"><div class="caldow">Fri</div></th>
+<th class="header block"><div class="caldow">Sat</div></th>
+<th class="header block"><div class="caldow">Sun</div></th>
+</tr>
+<tr class="datarow">
+<td class="data first"><div class="caldata calerr calnotreq"><div class="calradio"><input type="radio" class="radio" name="baddate" disabled="disabled"></div><div class="caldate">2 Jul</div></div></td>
+<td class="data block"><div class="caldata calerr calnotreq"><div class="calradio"><input type="radio" class="radio" name="baddate" disabled="disabled"></div><div class="caldate">3 Jul</div></div></td>
+<td class="data block"><div class="caldata calerr calnotreq"><div class="calradio"><input type="radio" class="radio" name="baddate" disabled="disabled"></div><div class="caldate">4 Jul</div></div></td>
+<td class="data block"><div class="caldata calerr calnotreq"><div class="calradio"><input type="radio" class="radio" name="baddate" disabled="disabled"></div><div class="caldate">5 Jul</div></div></td>
+<td class="data block"><div class="caldata calfare band-e"><label><div class="calradio"><input type="radio" class="radio" name="/sessionWorkflow/productWorkflow[@product='Air']/selectedDatePriceBinding[2]/@id" value="2rnaodos8wi0" id="2rnaodos8wi0-1-20120706" onclick="javascript:bindCal()" /></div><div class="caldate">6 Jul</div><div class="calmsg">Fares from</div><div class="calprice">€ 622</div></label></div></td>
+<td class="data block"><div class="caldata calfare band-e"><label><div class="calradio"><input type="radio" class="radio" name="/sessionWorkflow/productWorkflow[@product='Air']/selectedDatePriceBinding[2]/@id" value="2rnaodos8wjr" id="2rnaodos8wjr-1-20120707" onclick="javascript:bindCal()" /></div><div class="caldate">7 Jul</div><div class="calmsg">Fares from</div><div class="calprice">€ 2255</div></label></div></td>
+<td class="data block"><div class="caldata calfare band-e"><label><div class="calradio"><input type="radio" class="radio" name="/sessionWorkflow/productWorkflow[@product='Air']/selectedDatePriceBinding[2]/@id" value="2rnaodos8wi3" id="2rnaodos8wi3-1-20120708" onclick="javascript:bindCal()" /></div><div class="caldate">8 Jul</div><div class="calmsg">Fares from</div><div class="calprice">€ 622</div></label></div></td>
+</tr>
+<tr class="datarow">
+<td class="data first calreqdate"><div class="caldata calfare band-e"><label><div class="calradio"><input type="radio" class="radio" name="/sessionWorkflow/productWorkflow[@product='Air']/selectedDatePriceBinding[2]/@id" value="2rnaodos8wi6" id="2rnaodos8wi6-1-20120709" onclick="javascript:bindCal()" checked="checked" /></div><div class="caldate">9 Jul</div><div class="calmsg">Fares from</div><div class="calprice">€ 622</div></label></div></td>
+<td class="data block"><div class="caldata calfare band-e"><label><div class="calradio"><input type="radio" class="radio" name="/sessionWorkflow/productWorkflow[@product='Air']/selectedDatePriceBinding[2]/@id" value="2rnaodos8wjc" id="2rnaodos8wjc-1-20120710" onclick="javascript:bindCal()" /></div><div class="caldate">10 Jul</div><div class="calmsg">Fares from</div><div class="calprice">€ 801</div></label></div></td>
+<td class="data block"><div class="caldata calfare band-e"><label><div class="calradio"><input type="radio" class="radio" name="/sessionWorkflow/productWorkflow[@product='Air']/selectedDatePriceBinding[2]/@id" value="2rnaodos8who" id="2rnaodos8who-1-20120711" onclick="javascript:bindCal()" /></div><div class="caldate">11 Jul</div><div class="calmsg">Fares from</div><div class="calprice">€ 385</div></label></div></td>
+<td class="data block"><div class="caldata calfare band-e"><label><div class="calradio"><input type="radio" class="radio" name="/sessionWorkflow/productWorkflow[@product='Air']/selectedDatePriceBinding[2]/@id" value="2rnaodos8wi9" id="2rnaodos8wi9-1-20120712" onclick="javascript:bindCal()" /></div><div class="caldate">12 Jul</div><div class="calmsg">Fares from</div><div class="calprice">€ 622</div></label></div></td>
+<td class="data block"><div class="caldata calerr calnotreq"><div class="calradio"><input type="radio" class="radio" name="baddate" disabled="disabled"></div><div class="caldate">13 Jul</div></div></td>
+<td class="data block"><div class="caldata calerr calnotreq"><div class="calradio"><input type="radio" class="radio" name="baddate" disabled="disabled"></div><div class="caldate">14 Jul</div></div></td>
+<td class="data block"><div class="caldata calerr calnotreq"><div class="calradio"><input type="radio" class="radio" name="baddate" disabled="disabled"></div><div class="caldate">15 Jul</div></div></td>
+</tr>
+</table>
+</div>
+
+</td>
+</tr>
+
+<tr>
+<td>
+<div class="calkey">
+<table class="output calcolourkey" cellspacing="0" cellpadding="0">
+<tr>
+<th class="calcolhead"><div class="caldata calfare">low</div></th><th class="calcolhead"><div class="caldata calfare band-a" /></th><th class="calcolhead"><div class="caldata calfare band-b" /></th><th class="calcolhead"><div class="caldata calfare band-c" /></th><th class="calcolhead"><div class="caldata calfare band-d" /></th><th class="calcolhead"><div class="caldata calfare band-e" /></th><th class="calcolhead"><div class="caldata calfare">high</div></th></tr>
+</table>
+</div>
+
+</td>
+</tr>
+
+
+
+
+
+
+<tr>
+<td>
+<table class="output totalled" cellspacing="0" cellpadding="0">
+<tr class="datarow">
+<td class="totalled">
+
+
+
+<div id="totaltriptariff"><div id="tot2rnaodos8whf" style="display:none" class="totalreturnprice">Total price including tax: EUR 4 662,78</div><div id="tot2rnaodos8wh0" style="display:none" class="totalreturnprice">Total price including tax: EUR 3 208,78</div><div id="tot2rnaodos8wg6" style="display:none" class="totalreturnprice">Total price including tax: EUR 3 029,78</div><div id="tot2rnaodos8wfr" style="display:none" class="totalreturnprice">Total price including tax: EUR 2 792,78</div><div id="tot2rnaodos8wfc" style="display:none" class="totalreturnprice">Total price including tax: EUR 1 575,78</div><div id="tot2rnaodos8wex" style="display:none" class="totalreturnprice">Total price including tax: EUR 1 395,78</div><div id="tot2rnaodos8wei" style="display:none" class="totalreturnprice">Total price including tax: EUR 1 159,78</div><div id="totaltriptariffempty" style="display:none">No fare available</div></div>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td>
+<table class="nav" cellpadding="0" cellspacing="0">
+
+
+<tr>
+<td class="navbutton">
+<input class="submit button back" type="submit" alt="Back" name="_handler=itd.presentation.handler.request.air.PresAirBackToRequirementsRequestHandler" value="Back" />
+<input class="submit button" type="submit" alt="New search" name="_handler=itd.presentation.handler.request.air.PresAirNewRequirementsRequestHandler" value="New search" />
+<input class="submit button next" type="submit" alt="Next" name="_handler=itd.presentation.handler.request.air.PresAirDatePriceLedSelectDatesRequestHandler" value="Next" />
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+</table>
+</form>
+</td>
+
+</tr>
+</table>
+</td>
+
+
+</tr>
+</table>
+
+</div>
+
+</div>
+<div id="footer">
+
+<div class="pagefooter">
+<table cellpadding="0" class="footerline" cellspacing="0">
+<tr>
+<td>
+<br />
+</td>
+</tr>
+</table>
+<table cellpadding="0" class="footertext" cellspacing="0">
+<tr>
+
+
+
+<td class="leftspace"><br /></td>
+<td class="left">
+SITA E-Commerce platform &copy; Copyright SITA Advanced Travel Solutions Ltd 2000-2010
+</td>
+<td class="right">
+&nbsp;
+</td>
+
+</tr>
+</table>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</td>
+</tr>
+</table>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+var radBtns=new Array();
+var radCells=new Array();
+function bindCal(){
+
+if(radBtns.length==0) {
+for(var i=0;i<document.form.elements.length;i++){
+if(document.form.elements[i].name.indexOf('selectedDatePriceBinding') >= 0){
+radBtns[radBtns.length]=document.form.elements[i];
+var cell=document.form.elements[i].parentNode;
+for(;cell.nodeName.toLowerCase()!='td';cell=cell.parentNode);
+radCells[radCells.length]=cell;
+}
+}
+}
+for(var i=0;i<radBtns.length==true;i++){
+radCells[i].className=radCells[i].className.replace(/(.+) calsel(.*)$/,'$1$2');
+if(radBtns[i].checked==true){
+radCells[i].className=radCells[i].className+' calsel';
+}
+}
+var comb='';
+for(var i=0;i<radBtns.length==true;i++){
+if(radBtns[i].checked==true){
+comb=comb+radBtns[i].value;
+}
+}
+if (self.bindCalTotal) bindCalTotal(comb);
+
+}
+
+//-->
+</script>
+<script language="JavaScript" type="text/javascript">
+<!--
+var totals=new Array('2rnaodos8whn2rnaodos8who','tot2rnaodos8wei','2rnaodos8whq2rnaodos8who','tot2rnaodos8wei','2rnaodos8wht2rnaodos8who','tot2rnaodos8wei','2rnaodos8whw2rnaodos8who','tot2rnaodos8wei','2rnaodos8whn2rnaodos8wi0','tot2rnaodos8wex','2rnaodos8whn2rnaodos8wi3','tot2rnaodos8wex','2rnaodos8whn2rnaodos8wi6','tot2rnaodos8wex','2rnaodos8whn2rnaodos8wi9','tot2rnaodos8wex','2rnaodos8whq2rnaodos8wi0','tot2rnaodos8wex','2rnaodos8whq2rnaodos8wi3','tot2rnaodos8wex','2rnaodos8whq2rnaodos8wi6','tot2rnaodos8wex','2rnaodos8whq2rnaodos8wi9','tot2rnaodos8wex','2rnaodos8wht2rnaodos8wi0','tot2rnaodos8wex','2rnaodos8wht2rnaodos8wi3','tot2rnaodos8wex','2rnaodos8wht2rnaodos8wi6','tot2rnaodos8wex','2rnaodos8wht2rnaodos8wi9','tot2rnaodos8wex','2rnaodos8whw2rnaodos8wi0','tot2rnaodos8wex','2rnaodos8whw2rnaodos8wi3','tot2rnaodos8wex','2rnaodos8whw2rnaodos8wi6','tot2rnaodos8wex','2rnaodos8whw2rnaodos8wi9','tot2rnaodos8wex','2rnaodos8whn2rnaodos8wjc','tot2rnaodos8wfc','2rnaodos8whq2rnaodos8wjc','tot2rnaodos8wfc','2rnaodos8wht2rnaodos8wjc','tot2rnaodos8wfc','2rnaodos8whw2rnaodos8wjc','tot2rnaodos8wfc','2rnaodos8wjn2rnaodos8who','tot2rnaodos8wfr','2rnaodos8whn2rnaodos8wjr','tot2rnaodos8wg6','2rnaodos8whq2rnaodos8wjr','tot2rnaodos8wg6','2rnaodos8wht2rnaodos8wjr','tot2rnaodos8wg6','2rnaodos8whw2rnaodos8wjr','tot2rnaodos8wg6','2rnaodos8wjn2rnaodos8wi0','tot2rnaodos8wg6','2rnaodos8wjn2rnaodos8wi3','tot2rnaodos8wg6','2rnaodos8wjn2rnaodos8wi6','tot2rnaodos8wg6','2rnaodos8wjn2rnaodos8wi9','tot2rnaodos8wg6','2rnaodos8wjn2rnaodos8wjc','tot2rnaodos8wh0','2rnaodos8wjn2rnaodos8wjr','tot2rnaodos8whf');
+//-->
+</script>
+<script language="JavaScript" type="text/javascript">
+<!--
+function bindCalTotal(comb){
+
+if (totals.length==0) return;
+var ttt=fld('totaltriptariff');
+if (ttt!=null){
+var divs=ttt.getElementsByTagName('div');
+for(var i=0;i<divs.length==true;i++){;
+divs[i].style.display='none';
+}
+var found=false;
+for(var i=0;i<totals.length==true;i+=2){
+if(totals[i]==comb){
+fld(totals[i+1]).style.display='inline';
+found=true;
+}
+}
+if(found==false){
+fld('totaltriptariffempty').style.display='inline';
+}
+}
+
+} // end function bindCalTotal
+
+function fld(id){
+return document.getElementById(id);
+}
+
+//-->
+</script>
+<div id="wait" style="position:absolute;top:0px;left:0px;display:none;">
+
+<div id="wrapper">
+
+
+<h1>
+Please Wait<br /><br />Your request is being processed<br />
+</h1>
+<img id="waitAni" alt="" name="PleaseWaitImage" src="/images/en/Taag_pleasewait.gif" border="0" />
+
+
+</div>
+</div>
+</body>
+</html>

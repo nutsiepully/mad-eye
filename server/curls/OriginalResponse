@@ -1,0 +1,864 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<!--
+Copyright 1998-2008 SITA Advanced Travel Solutions Limited  All rights reserved.
+SITA software is protected by copyright law and international treaties. 
+Unauthorised use, reproduction, distribution or alteration of it or any portion thereof
+may result in severe civil and criminal penalties and will be prosecuted to the maximum
+extent possible under the law.
+www.sita.aero  iTravelDirect
+-->
+<head ><title>SITA E-Commerce - Flight and fare options</title>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<meta name="robots" content="noindex,nofollow" />
+<meta http-equiv="expires" content="-1" />
+<meta http-equiv="imagetoolbar" content="no" />
+<link rel="stylesheet" type="text/css" href="/css/external/yui/2.3.1/calendar.css?nocache=v3_50_133" media="screen" />
+<link rel="stylesheet" type="text/css" href="/css/external/yui/2.3.1/container.css?nocache=v3_50_133" media="screen" />
+<link rel="stylesheet" type="text/css" href="/css/itd.css?nocache=v3_50_133" media="screen" />
+<link rel="stylesheet" type="text/css" href="/css/ltr.css?nocache=v3_50_133" media="screen" />
+<link rel="stylesheet" type="text/css" href="/css/taag.css?nocache=v3_50_133" media="screen" />
+
+<link rel="stylesheet" type="text/css" href="/css/print.css?nocache=v3_50_133" media="print" />
+
+<script language="JavaScript1.2" type="text/javascript" src="/scripts/external/yui/2.3.1/yahoo-dom-event.js"></script>
+<script language="JavaScript1.2" type="text/javascript" src="/scripts/external/yui/2.3.1/container-min.js"></script>
+</head>
+<body onunload="resetPleaseWait()" class="air air-journeytariffledavailabilitypage" id="taag-sita-aero" onload="if('function'==typeof(bind)) {bind();}">
+
+
+<script language="JavaScript" type="text/javascript">
+<!--
+var plWaitEnabled = true; 
+function disableWaitPage() {
+plWaitEnabled = false;
+}
+function pleaseWait() {
+if (!plWaitEnabled) {
+return;
+}
+if (document.getElementById('header')!=null){
+document.getElementById('header').style.display="none";
+}
+if (document.getElementById('footer')!=null){
+document.getElementById('footer').style.display="none";
+}
+if (document.getElementById('main')!=null){
+document.getElementById('main').style.display="none";
+}
+document.getElementById('wait').style.display="block";
+window.scroll(0, 0);
+if (typeof pleaseWaitSetDynamic=='function') {
+pleaseWaitSetDynamic();
+}
+window.setTimeout("if ( document.images['PleaseWaitImage'] ) {document.images['PleaseWaitImage'].src = document.images['PleaseWaitImage'].src;}",200);
+}
+function resetPleaseWait() {
+if (navigator.userAgent.indexOf('Opera') != -1) {
+if (document.getElementById('wait')!=null){
+document.getElementById('wait').style.display="none";
+}
+if (document.getElementById('header')!=null){
+document.getElementById('header').style.display="block";
+}
+if (document.getElementById('footer')!=null){
+document.getElementById('footer').style.display="block";
+}
+if (document.getElementById('main')!=null){
+document.getElementById('main').style.display="block";
+}
+}
+document.getElementById('wait').style.display="block";
+}
+function overrideWaitMessage(newMessage) {
+var containingDiv = document.getElementById('wrapper');
+var imageList = [];
+if ((containingDiv == null) || (containingDiv.childNodes == null)) {
+return true;
+}
+// Remove all child elements, but maintain the list of images which we will add back in later.
+while (containingDiv.childNodes.length > 1) {
+if (containingDiv.firstChild.nodeName == 'IMG') {
+imageList[imageList.length] = containingDiv.firstChild;
+}
+containingDiv.removeChild(containingDiv.firstChild);
+}
+// Add in our overriding message.
+var newMsgElement = document.createElement('h1');
+var newMsgText = document.createTextNode(newMessage);
+newMsgElement.appendChild(newMsgText);
+containingDiv.appendChild(newMsgElement);
+// Add in all images.
+for (var i = 0; i < imageList.length; i++) {
+containingDiv.appendChild(imageList[i]);
+}
+return true;
+}
+//-->
+</script>
+<script language="JavaScript" type="text/javascript">
+<!--
+var loadingtxt = "Loading, please wait...";var loadingimg = "/images/sita/loading.gif";
+//-->
+</script>
+
+
+
+
+<table id="bodysurround" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<div id="header">
+
+<div class="pageheader">
+<div id="printlogo">
+<img src="/images/sita/sitaairlines_logo_print.gif;" border="0" />
+</div>
+
+<div class="logoandstrapline">
+<table cellpadding="0" class="corporate" cellspacing="0">
+<tr>
+
+<td class="corporateleft"><img src="/images/en/project/taag_logo.gif" /></td>
+
+<td class="corporateright">
+
+
+
+
+</td>
+
+
+</tr>
+</table>
+</div>
+
+
+
+</div>
+
+
+
+<script type="text/javascript" src="/scripts/mouseover.js" >
+</script>
+<div class="pagetabs">
+<table cellpadding="0" class="tab" cellspacing="0">
+<tr>
+
+<td class="tableft" >
+
+
+
+
+<a href="https://taag.sita.aero/itd/itd/ChangeLocale?requestor=itd%2epresentation%2ehandler%2epage%2eair%2ePresAirJourneyTariffLedAvailabilityPageHandler&amp;locale=en"><img title="English" alt="English" src="/images/locale/en.gif" border="0" /></a>
+
+<a href="https://taag.sita.aero/itd/itd/ChangeLocale?requestor=itd%2epresentation%2ehandler%2epage%2eair%2ePresAirJourneyTariffLedAvailabilityPageHandler&amp;locale=pt"><img title="Português" alt="Português" src="/images/locale/pt.gif" border="0" /></a>
+
+
+</td>
+
+
+
+
+<td class="tabfront" onclick="window.location.href=document.getElementById('TabHome').href;return false;" onmouseover="flipOn(this)" onmouseout="flipOff(this)">
+<a id="TabHome" href="https://taag.sita.aero/itd/itd/Home">Home</a>
+</td>
+
+
+<td class="tabfront" onclick="window.location.href=document.getElementById('TabAir').href;return false;" onmouseover="flipOn(this)" onmouseout="flipOff(this)">
+<a id="TabAir" href="https://taag.sita.aero/itd/itd/Air">Flights</a>
+</td>
+
+
+
+
+
+
+
+
+
+
+<td class="tabfront" onclick="window.location.href=document.getElementById('TabMyBookings').href;return false;" onmouseover="flipOn(this)" onmouseout="flipOff(this)">
+
+
+
+
+
+
+
+
+<a id="TabMyBookings" href="https://taag.sita.aero/itd/itd/reservations">My bookings</a>
+</td>
+
+
+<td class="tabfront" onclick="window.location.href=document.getElementById('TabProfile').href;return false;" onmouseover="flipOn(this)" onmouseout="flipOff(this)">
+<a id="TabProfile" href="https://taag.sita.aero/itd/itd/Profile">My profile</a>
+</td>
+
+
+<td class="tabfront" onclick="window.location.href=document.getElementById('TabSupport').href;return false;" onmouseover="flipOn(this)" onmouseout="flipOff(this)">
+<a id="TabSupport" href="https://taag.sita.aero/itd/itd/Support">Support</a>
+</td>
+
+<td class="tabright"><br /></td>
+</tr>
+</table>
+<table cellpadding="0" class="tabline" cellspacing="0">
+<tr>
+<td class="tablinenotext"><br /></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+</div>
+<div id="main">
+
+<div class="body bodystandard">
+
+<table cellpadding="0" class="body" cellspacing="0">
+<tr>
+
+<td class="left" valign="top">
+
+<div class="pageleft">
+<table cellpadding="0" class="leftmain" cellspacing="0">
+
+
+
+<tr><td height="1%">&nbsp;</td></tr>
+<tr><td class="lefttext" height="1%">
+Rua da Missão 123-126<br />
+C.P. 79<br />
+LUANDA<br />
+República de Angola<br />
+<a href="https://taag.sita.aero/itd/itd/Logon">Logon</a><br />
+
+
+
+
+
+
+
+
+
+
+</td></tr>
+
+
+
+</table>
+</div>
+
+</td>
+
+<td class="pagecenter" valign="top">
+<table cellpadding="0" cellspacing="0">
+
+
+
+
+
+<tr>
+<td class="center" valign="top">
+<form onsubmit="pleaseWait(); return true;" id="mainform" name="form" action="https://taag.sita.aero/itd/itd" method="post"><input type="hidden" class="hidden" name="requestor" value="itd.presentation.handler.page.air.PresAirJourneyTariffLedAvailabilityPageHandler" /><input type="hidden" class="hidden" name="secret" value="E88HX6A138ELNY7124A80H0Q1W33MY7X" />
+<table cellpadding="0" class="centermain" cellspacing="0">
+
+<tr class="bodyheaderrow">
+<td>
+<table class="bodyheader" cellpadding="0" cellspacing="0"><col class="col1"/>
+<tr >
+<td class="title">Flight and fare options</td>
+</tr>
+<tr >
+<td class="text">Select your preferred flight and fare combination below and click "Next" to continue.<br />All prices are per adult and exclude taxes.</td>
+</tr>
+</table>
+</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+<td class="sectionheader">
+Select a flight for your outbound journey,
+Luanda - Lisbon
+</td>
+</tr>
+
+
+
+
+
+<tr>
+<td>
+
+
+<div id="jnytar1">
+
+
+<table class="output columns" cellspacing="0" cellpadding="0">
+<tr class="headerrow colsrow">
+<th class="header block flight" colspan="2">Flight</th>
+<th class="header block location">From/To</th>
+
+
+<th class="header block time" colspan="3">Time</th>
+ 
+
+<th class="header block fmt1"><a onclick="javascript:window.open('http://www.taag.com/en/virtual-cabins.aspx','Fare_types','').focus();return false;" href="http://www.taag.com/en/virtual-cabins.aspx">Semiflex</a></th>
+
+<th class="header block fmt2"><a onclick="javascript:window.open('http://www.taag.com/en/virtual-cabins.aspx','Fare_types','').focus();return false;" href="http://www.taag.com/en/virtual-cabins.aspx">Flex</a></th>
+
+</tr>
+
+
+
+<tr class="datarow">
+
+
+
+<td class="data block" width="94">
+<img width="90" height="30" alt="Angola Airlines" src="/images/airoperator/DT.gif" />
+</td>
+<td class="data block flight">
+
+ 
+<span class="servicecode">
+
+
+
+<a href="https://taag.sita.aero/itd/itd/lang/en/travel/journeys/DT-6505-LAD-LIS-20120702">DT6505</a>
+
+
+
+</span>
+
+<br />
+<span class="serviceclass">              
+
+ 
+</span>
+
+</td>
+<td class="data block location">
+<span class="origin">Luanda</span><br />
+<span class="destination">Lisbon</span>
+</td>
+
+
+
+<td class="data block time">
+Mon,&nbsp;02&nbsp;Jul<br />
+
+
+&nbsp;
+
+</td>
+
+
+
+<td colspan="2" class="data block time">
+<span class="depart">21:30</span><br />
+<span class="arrive">05:00</span> (+1)
+</td>
+
+
+
+<td class="data block matrix headlineonewayprice fmt1">
+<input type="radio" class="radio" name="/sessionWorkflow/productWorkflow[@product='Air']/selectedBinding[1]/@id" value="2rnaodos97gq" id="2rnaodos97gq" onclick="javascript:bind()" checked="checked" />
+<a title="Rules and Restrictions" alt="Rules and Restrictions" href="https://taag.sita.aero/itd/itd/AirJourneyTariffBindingDetail?requestor=itd%2epresentation%2ehandler%2epage%2eair%2ePresAirJourneyTariffLedAvailabilityPageHandler&amp;%2fsessionWorkflow%2fproductWorkflow%5b%40product%3d%27Air%27%5d%2fselectedJourneyTariffBinding%2f%40id=2rnaodos97gq">USD 706.00</a>
+</td>
+
+<td class="data block matrix headlineonewayprice fmt2">
+<input type="radio" class="radio" name="/sessionWorkflow/productWorkflow[@product='Air']/selectedBinding[1]/@id" value="2rnaodos97gr" id="2rnaodos97gr" onclick="javascript:bind()" />
+<a title="Rules and Restrictions" alt="Rules and Restrictions" href="https://taag.sita.aero/itd/itd/AirJourneyTariffBindingDetail?requestor=itd%2epresentation%2ehandler%2epage%2eair%2ePresAirJourneyTariffLedAvailabilityPageHandler&amp;%2fsessionWorkflow%2fproductWorkflow%5b%40product%3d%27Air%27%5d%2fselectedJourneyTariffBinding%2f%40id=2rnaodos97gr">USD 1,225.00</a>
+</td>
+
+
+</tr>
+
+
+
+
+
+
+
+
+
+<tr class="footerrow">
+<td colspan="8" class="footer first">
+<input class="submit button wide" type="submit" name="_handler=itd.presentation.handler.request.air.PresAirJourneyTariffLedSearchPreviousDayRequestHandler/_xpath=/sessionWorkflow/productWorkflow[@product='Air']/tripJourneyTariffAvailability/journeyTariffAvailability[1]/_/sessionWorkflow/productWorkflow[@product='Air']/journeyIndex_=_0/_/sessionWorkflow/productWorkflow[@product='Air']/date_=_2012-07-01" value="Previous day" />&nbsp;<input class="submit button wide" type="submit" name="_handler=itd.presentation.handler.request.air.PresAirJourneyTariffLedSearchNextDayRequestHandler/_xpath=/sessionWorkflow/productWorkflow[@product='Air']/tripJourneyTariffAvailability/journeyTariffAvailability[1]/_/sessionWorkflow/productWorkflow[@product='Air']/journeyIndex_=_0/_/sessionWorkflow/productWorkflow[@product='Air']/date_=_2012-07-03" value="Next day" />
+</td>
+</tr>
+
+
+
+</table>
+
+
+</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td class="sectionheader">
+Select a flight for your inbound journey,
+Lisbon - Luanda
+</td>
+</tr>
+
+
+
+
+
+<tr>
+<td>
+
+
+<div id="jnytar2">
+
+
+<table class="output columns" cellspacing="0" cellpadding="0">
+<tr class="headerrow colsrow">
+<th class="header block flight" colspan="2">Flight</th>
+<th class="header block location">From/To</th>
+
+
+<th class="header block time" colspan="3">Time</th>
+ 
+
+<th class="header block fmt1"><a onclick="javascript:window.open('http://www.taag.com/en/virtual-cabins.aspx','Fare_types','').focus();return false;" href="http://www.taag.com/en/virtual-cabins.aspx">Semiflex</a></th>
+
+<th class="header block fmt2"><a onclick="javascript:window.open('http://www.taag.com/en/virtual-cabins.aspx','Fare_types','').focus();return false;" href="http://www.taag.com/en/virtual-cabins.aspx">Flex</a></th>
+
+</tr>
+
+
+
+<tr class="datarow">
+
+
+
+<td class="data block" width="94">
+<img width="90" height="30" alt="Angola Airlines" src="/images/airoperator/DT.gif" />
+</td>
+<td class="data block flight">
+
+ 
+<span class="servicecode">
+
+
+
+<a href="https://taag.sita.aero/itd/itd/lang/en/travel/journeys/DT-651-LIS-LAD-20120709">DT651</a>
+
+
+
+</span>
+
+<br />
+<span class="serviceclass">              
+
+ 
+</span>
+
+</td>
+<td class="data block location">
+<span class="origin">Lisbon</span><br />
+<span class="destination">Luanda</span>
+</td>
+
+
+
+<td class="data block time">
+Mon,&nbsp;09&nbsp;Jul<br />
+
+
+&nbsp;
+
+</td>
+
+
+
+<td colspan="2" class="data block time">
+<span class="depart">11:00</span><br />
+<span class="arrive">18:30</span>
+</td>
+
+
+
+<td class="data block matrix headlineonewayprice fmt1">
+<input type="radio" class="radio" name="/sessionWorkflow/productWorkflow[@product='Air']/selectedBinding[2]/@id" value="2rnaodos97gs" id="2rnaodos97gs" onclick="javascript:bind()" checked="checked" />
+<a title="Rules and Restrictions" alt="Rules and Restrictions" href="https://taag.sita.aero/itd/itd/AirJourneyTariffBindingDetail?requestor=itd%2epresentation%2ehandler%2epage%2eair%2ePresAirJourneyTariffLedAvailabilityPageHandler&amp;%2fsessionWorkflow%2fproductWorkflow%5b%40product%3d%27Air%27%5d%2fselectedJourneyTariffBinding%2f%40id=2rnaodos97gs">USD 911.00</a>
+</td>
+
+<td class="data block matrix headlineonewayprice fmt2">
+<input type="radio" class="radio" name="/sessionWorkflow/productWorkflow[@product='Air']/selectedBinding[2]/@id" value="2rnaodos97gt" id="2rnaodos97gt" onclick="javascript:bind()" />
+<a title="Rules and Restrictions" alt="Rules and Restrictions" href="https://taag.sita.aero/itd/itd/AirJourneyTariffBindingDetail?requestor=itd%2epresentation%2ehandler%2epage%2eair%2ePresAirJourneyTariffLedAvailabilityPageHandler&amp;%2fsessionWorkflow%2fproductWorkflow%5b%40product%3d%27Air%27%5d%2fselectedJourneyTariffBinding%2f%40id=2rnaodos97gt">USD 1,225.00</a>
+</td>
+
+
+</tr>
+
+
+
+
+
+
+
+
+
+<tr class="footerrow">
+<td colspan="8" class="footer first">
+<input class="submit button wide" type="submit" name="_handler=itd.presentation.handler.request.air.PresAirJourneyTariffLedSearchPreviousDayRequestHandler/_xpath=/sessionWorkflow/productWorkflow[@product='Air']/tripJourneyTariffAvailability/journeyTariffAvailability[2]/_/sessionWorkflow/productWorkflow[@product='Air']/journeyIndex_=_1/_/sessionWorkflow/productWorkflow[@product='Air']/date_=_2012-07-08" value="Previous day" />&nbsp;<input class="submit button wide" type="submit" name="_handler=itd.presentation.handler.request.air.PresAirJourneyTariffLedSearchNextDayRequestHandler/_xpath=/sessionWorkflow/productWorkflow[@product='Air']/tripJourneyTariffAvailability/journeyTariffAvailability[2]/_/sessionWorkflow/productWorkflow[@product='Air']/journeyIndex_=_1/_/sessionWorkflow/productWorkflow[@product='Air']/date_=_2012-07-10" value="Next day" />
+</td>
+</tr>
+
+
+
+</table>
+
+
+</div>
+</td>
+</tr>
+
+
+
+
+
+<tr>
+<td>
+<table class="output totalled" cellspacing="0" cellpadding="0">
+<tr class="datarow">
+<td class="totalled">
+
+
+
+<div id="totaltriptariff0"><div id="tot2rnaodos97gu" style="display:inline" class="totalreturnprice">Total price including tax: USD 1,815.40&nbsp;<input class="submit button" type="submit" name="_handler=itd.presentation.handler.request.air.PresAirTripJourneyTariffBindingDetailRequestHandler/_xpath=/sessionWorkflow/productWorkflow[@product='Air']/tripJourneyTariffAvailability/_/sessionWorkflow/productWorkflow[@product='Air']/selectedTripJourneyTariffBinding/@id_=_2rnaodos97i1" value="Rules" /></div><div id="tot2rnaodos97h4" style="display:none" class="totalreturnprice">Total price including tax: USD 2,128.40&nbsp;<input class="submit button" type="submit" name="_handler=itd.presentation.handler.request.air.PresAirTripJourneyTariffBindingDetailRequestHandler/_xpath=/sessionWorkflow/productWorkflow[@product='Air']/tripJourneyTariffAvailability/_/sessionWorkflow/productWorkflow[@product='Air']/selectedTripJourneyTariffBinding/@id_=_2rnaodos97i2" value="Rules" /></div><div id="tot2rnaodos97he" style="display:none" class="totalreturnprice">Total price including tax: USD 2,334.40&nbsp;<input class="submit button" type="submit" name="_handler=itd.presentation.handler.request.air.PresAirTripJourneyTariffBindingDetailRequestHandler/_xpath=/sessionWorkflow/productWorkflow[@product='Air']/tripJourneyTariffAvailability/_/sessionWorkflow/productWorkflow[@product='Air']/selectedTripJourneyTariffBinding/@id_=_2rnaodos97i3" value="Rules" /></div><div id="tot2rnaodos97ho" style="display:none" class="totalreturnprice">Total price including tax: USD 2,647.40&nbsp;<input class="submit button" type="submit" name="_handler=itd.presentation.handler.request.air.PresAirTripJourneyTariffBindingDetailRequestHandler/_xpath=/sessionWorkflow/productWorkflow[@product='Air']/tripJourneyTariffAvailability/_/sessionWorkflow/productWorkflow[@product='Air']/selectedTripJourneyTariffBinding/@id_=_2rnaodos97i4" value="Rules" /></div><div id="totaltriptariffempty0" style="display:none">No fare available</div></div>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr><td class="sectionfooter">(+1) Flight departs/arrives one day later</td></tr>
+
+  
+<tr>
+<td>
+<table class="nav" cellpadding="0" cellspacing="0">
+
+
+<tr>
+<td class="navbutton">
+
+
+
+<input class="submit button back" type="submit" alt="Back" name="_handler=itd.presentation.handler.request.air.PresReturnToAvailabilityRequestHandler" value="Back" onclick="disableWaitPage()" />
+
+<input class="submit button" type="submit" alt="New search" name="_handler=itd.presentation.handler.request.air.PresAirNewRequirementsRequestHandler" value="New search" />
+
+<input class="submit button next" type="submit" alt="Select flights" name="_handler=itd.presentation.handler.request.air.PresAirJourneyTariffLedSelectProductRequestHandler" value="Next" />
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+</table>
+</form>
+</td>
+
+</tr>
+</table>
+</td>
+
+
+</tr>
+</table>
+
+</div>
+
+</div>
+<div id="footer">
+
+<div class="pagefooter">
+<table cellpadding="0" class="footerline" cellspacing="0">
+<tr>
+<td>
+<br />
+</td>
+</tr>
+</table>
+<table cellpadding="0" class="footertext" cellspacing="0">
+<tr>
+
+
+
+<td class="leftspace"><br /></td>
+<td class="left">
+SITA E-Commerce platform &copy; Copyright SITA Advanced Travel Solutions Ltd 2000-2010
+</td>
+<td class="right">
+&nbsp;
+</td>
+
+</tr>
+</table>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</td>
+</tr>
+</table>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+var bindings=new Array();
+//ENDBINDINGS
+var disabledJourneyText='This flight is not available for purchase with the flight selected above';
+//-->
+</script>
+<script language="JavaScript" type="text/javascript">
+<!--
+var journeys=new Array();
+var grps=new Array();
+var lastSelJny=null;
+function bind(){
+var firstTime=(lastSelJny==null);
+if (journeys.length==0) {
+for(var i=0;i<document.forms.length;i++){
+for(var j=0;j<document.forms[i].elements.length;j++){
+var el=document.forms[i].elements[j];
+if(el.name.indexOf('selectedBinding') >= 0) {
+journeys[journeys.length]=document.forms[i].elements[j];
+var grp=document.getElementById('grp-'+el.id);
+if(grp!=null) {
+grps[grps.length]=grp;
+}
+}
+}
+}
+}
+if(grps.length>0) {
+for(var i=0;i<journeys.length==true;i++){
+if(journeys[i].checked==true && journeys[i].name.indexOf('selectedBinding[1]') >= 0 && lastSelJny!=journeys[i]){
+lastSelJny=journeys[i];
+for(var i=0;i<grps.length;i++){
+grps[i].style.opacity=0.25;
+}
+}
+}
+if(firstTime){
+bind2();
+}else{
+window.setTimeout(bind2,400);
+}
+}else {
+bind2();
+}
+}
+function bind2(){
+for(var i=0;i<grps.length;i++){
+grps[i].style.opacity=1;
+}
+var active=null;
+for(var i=0;i<journeys.length==true;i++){
+journeys[i].disabled=false;
+journeys[i].parentNode.style.display='';
+journeys[i].parentNode.title='';
+if(active==null && journeys[i].checked==true){
+for(var j=0;j<bindings.length==true;j++){
+if(journeys[i].id==bindings[j][0]){
+active=bindings[j];
+}
+}
+}
+}
+var move=null;
+if(active!=null){
+for(var i=1;i<active.length==true;i++){
+var btnDiv=document.getElementById('grp-'+active[i]);
+if (btnDiv!=null) {
+btnDiv.style.display='none';
+}
+var btn=document.getElementById(active[i]);
+if(btn!=null){
+btn.disabled=true;
+btn.parentNode.title=disabledJourneyText;
+if(btn.checked==true){
+btn.checked=false;
+move=btn;
+}
+}
+}
+}
+if(move!=null){
+if(move.scrollWidth==0){
+var jnys=move.parentNode.parentNode.getElementsByTagName('input');
+for(var i=0;i<jnys.length==true;i++){
+if(jnys[i].disabled==false){
+jnys[i].checked=true;
+move=null;
+break;
+}
+}
+}
+if(move!=null){
+for(var i=0;i<journeys.length==true;i++){
+if(journeys[i].name==move.name && journeys[i].disabled==false){
+journeys[i].checked=true;
+break;
+}
+}
+}
+}
+var comb='';
+for(var i=0;i<journeys.length==true;i++){
+if(journeys[i].checked==true){
+comb=comb+journeys[i].id;
+}
+}
+if (self.bindTotal) bindTotal(comb);
+}
+
+//-->
+</script>
+<script language="JavaScript" type="text/javascript">
+<!--
+var totals=new Array();totals[0]=new Array('2rnaodos97gq2rnaodos97gs','tot2rnaodos97gu','2rnaodos97gq2rnaodos97gt','tot2rnaodos97h4','2rnaodos97gr2rnaodos97gs','tot2rnaodos97he','2rnaodos97gr2rnaodos97gt','tot2rnaodos97ho');
+//-->
+</script>
+<script language="JavaScript" type="text/javascript">
+<!--
+function bindTotal(comb){
+if (totals.length==0) return;
+var lasttotsel=null;
+for(var t=0;t<totals.length==true;t++){
+var totalArray=totals[t];
+var ttt=fld('totaltriptariff'+t);
+if (ttt!=null){
+var divs=ttt.getElementsByTagName('div');
+for(var i=0;i<divs.length==true;i++){;
+divs[i].style.display='none';
+}
+var found=false;
+for(var i=0;i<totalArray.length==true;i+=2){
+if(totalArray[i]==comb){
+fld(totalArray[i+1]).style.display='inline';
+found=true;
+}
+}
+if(found==false){
+fld('totaltriptariffempty'+t).style.display='inline';
+}
+var totsel=fld('totalselector'+t);
+if (totsel!=null){
+if(found){
+totsel.disabled=false;
+lasttotsel=totsel;
+}else{
+totsel.disabled=true;
+if(totsel.checked==true){
+totsel.checked=false;
+if(lasttotsel!=null){
+lasttotsel.checked=true;
+}
+}
+}
+}
+}
+}
+}
+function fld(id){
+return document.getElementById(id);
+}
+
+//-->
+</script>
+<div id="wait" style="position:absolute;top:0px;left:0px;display:none;">
+
+<div id="wrapper">
+
+
+<h1>
+Please Wait<br /><br />Your request is being processed<br />
+</h1>
+<img id="waitAni" alt="" name="PleaseWaitImage" src="/images/en/Taag_pleasewait.gif" border="0" />
+
+
+</div>
+</div>
+</body>
+</html>
