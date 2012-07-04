@@ -263,7 +263,7 @@ República de Angola<br />
 
 <tr>
 <td class="center" valign="top">
-<form onsubmit="pleaseWait(); return true;" id="mainform" name="form" action="https://taag.sita.aero/itd/itd" method="post"><input type="hidden" class="hidden" name="requestor" value="itd.presentation.handler.page.air.PresAirJourneyTariffLedAvailabilityPageHandler" /><input type="hidden" class="hidden" name="secret" value="1AL55S2GPDUFYV4Y07PAJOT4J67LA0NI" />
+<form onsubmit="pleaseWait(); return true;" id="mainform" name="form" action="https://taag.sita.aero/itd/itd" method="post"><input type="hidden" class="hidden" name="requestor" value="itd.presentation.handler.page.air.PresAirJourneyTariffLedAvailabilityPageHandler" /><input type="hidden" class="hidden" name="secret" value="U5OTFD008K7XM5RKM94MZPSY6W10CJPX" />
 <table cellpadding="0" class="centermain" cellspacing="0">
 
 <tr class="bodyheaderrow">
@@ -310,7 +310,7 @@ República de Angola<br />
 <tr>
 <td class="sectionheader">
 Select a flight for your outbound journey,
-Luanda - Lisbon
+Brussels - Luanda
 </td>
 </tr>
 
@@ -334,9 +334,7 @@ Luanda - Lisbon
 <th class="header block time" colspan="3">Time</th>
  
 
-<th class="header block fmt1"><a onclick="javascript:window.open('http://www.taag.com/en/virtual-cabins.aspx','Fare_types','').focus();return false;" href="http://www.taag.com/en/virtual-cabins.aspx">Semiflex</a></th>
-
-<th class="header block fmt2"><a onclick="javascript:window.open('http://www.taag.com/en/virtual-cabins.aspx','Fare_types','').focus();return false;" href="http://www.taag.com/en/virtual-cabins.aspx">Flex</a></th>
+<th class="header block fmt1"><a onclick="javascript:window.open('http://www.taag.com/en/virtual-cabins.aspx','Fare_types','').focus();return false;" href="http://www.taag.com/en/virtual-cabins.aspx">Flex</a></th>
 
 </tr>
 
@@ -356,11 +354,11 @@ Luanda - Lisbon
 
 
 
-<a href="https://taag.sita.aero/itd/itd/lang/en/travel/journeys/DT-6505-LAD-LIS-20120702">DT6505</a>
+<a href="https://taag.sita.aero/itd/itd/lang/en/travel/journeys/DT-6359-BRU-LAD-20120715">DT6359</a>
 
 
 
-</span>
+<span title="Operated&nbsp;for&nbsp;Angola&nbsp;Airlines&nbsp;by&nbsp;a&nbsp;partner&nbsp;airline">(!)</span></span>
 
 <br />
 <span class="serviceclass">              
@@ -370,14 +368,14 @@ Luanda - Lisbon
 
 </td>
 <td class="data block location">
-<span class="origin">Luanda</span><br />
-<span class="destination">Lisbon</span>
+<span class="origin">Brussels&nbsp;-&nbsp;National</span><br />
+<span class="destination">Luanda</span>
 </td>
 
 
 
 <td class="data block time">
-Mon,&nbsp;02&nbsp;Jul<br />
+Sun,&nbsp;15&nbsp;Jul<br />
 
 
 &nbsp;
@@ -387,20 +385,15 @@ Mon,&nbsp;02&nbsp;Jul<br />
 
 
 <td colspan="2" class="data block time">
-<span class="depart">21:30</span><br />
-<span class="arrive">05:00</span> (+1)
+<span class="depart">10:45</span><br />
+<span class="arrive">18:25</span>
 </td>
 
 
 
 <td class="data block matrix headlineonewayprice fmt1">
-<input type="radio" class="radio" name="/sessionWorkflow/productWorkflow[@product='Air']/selectedBinding[1]/@id" value="i3qs7if3ych4" id="i3qs7if3ych4" onclick="javascript:bind()" checked="checked" />
-<a title="Rules and Restrictions" alt="Rules and Restrictions" href="https://taag.sita.aero/itd/itd/AirJourneyTariffBindingDetail?requestor=itd%2epresentation%2ehandler%2epage%2eair%2ePresAirJourneyTariffLedAvailabilityPageHandler&amp;%2fsessionWorkflow%2fproductWorkflow%5b%40product%3d%27Air%27%5d%2fselectedJourneyTariffBinding%2f%40id=i3qs7if3ych4">USD 706.00</a>
-</td>
-
-<td class="data block matrix headlineonewayprice fmt2">
-<input type="radio" class="radio" name="/sessionWorkflow/productWorkflow[@product='Air']/selectedBinding[1]/@id" value="i3qs7if3ych5" id="i3qs7if3ych5" onclick="javascript:bind()" />
-<a title="Rules and Restrictions" alt="Rules and Restrictions" href="https://taag.sita.aero/itd/itd/AirJourneyTariffBindingDetail?requestor=itd%2epresentation%2ehandler%2epage%2eair%2ePresAirJourneyTariffLedAvailabilityPageHandler&amp;%2fsessionWorkflow%2fproductWorkflow%5b%40product%3d%27Air%27%5d%2fselectedJourneyTariffBinding%2f%40id=i3qs7if3ych5">USD 1,225.00</a>
+<input type="radio" class="radio" name="/sessionWorkflow/productWorkflow[@product='Air']/selectedBinding[1]/@id" value="zkvillxwifta" id="zkvillxwifta" onclick="javascript:bind()" checked="checked" />
+<a title="Rules and Restrictions" alt="Rules and Restrictions" href="https://taag.sita.aero/itd/itd/AirJourneyTariffBindingDetail?requestor=itd%2epresentation%2ehandler%2epage%2eair%2ePresAirJourneyTariffLedAvailabilityPageHandler&amp;%2fsessionWorkflow%2fproductWorkflow%5b%40product%3d%27Air%27%5d%2fselectedJourneyTariffBinding%2f%40id=zkvillxwifta">EUR 1 000,00</a>
 </td>
 
 
@@ -415,8 +408,8 @@ Mon,&nbsp;02&nbsp;Jul<br />
 
 
 <tr class="footerrow">
-<td colspan="8" class="footer first">
-<input class="submit button wide" type="submit" name="_handler=itd.presentation.handler.request.air.PresAirJourneyTariffLedSearchPreviousDayRequestHandler/_xpath=/sessionWorkflow/productWorkflow[@product='Air']/tripJourneyTariffAvailability/journeyTariffAvailability[1]/_/sessionWorkflow/productWorkflow[@product='Air']/journeyIndex_=_0/_/sessionWorkflow/productWorkflow[@product='Air']/date_=_2012-07-01" value="Previous day" />&nbsp;<input class="submit button wide" type="submit" name="_handler=itd.presentation.handler.request.air.PresAirJourneyTariffLedSearchNextDayRequestHandler/_xpath=/sessionWorkflow/productWorkflow[@product='Air']/tripJourneyTariffAvailability/journeyTariffAvailability[1]/_/sessionWorkflow/productWorkflow[@product='Air']/journeyIndex_=_0/_/sessionWorkflow/productWorkflow[@product='Air']/date_=_2012-07-03" value="Next day" />
+<td colspan="7" class="footer first">
+<input class="submit button wide" type="submit" name="_handler=itd.presentation.handler.request.air.PresAirJourneyTariffLedSearchPreviousDayRequestHandler/_xpath=/sessionWorkflow/productWorkflow[@product='Air']/tripJourneyTariffAvailability/journeyTariffAvailability[1]/_/sessionWorkflow/productWorkflow[@product='Air']/journeyIndex_=_0/_/sessionWorkflow/productWorkflow[@product='Air']/date_=_2012-07-14" value="Previous day" />&nbsp;<input class="submit button wide" type="submit" name="_handler=itd.presentation.handler.request.air.PresAirJourneyTariffLedSearchNextDayRequestHandler/_xpath=/sessionWorkflow/productWorkflow[@product='Air']/tripJourneyTariffAvailability/journeyTariffAvailability[1]/_/sessionWorkflow/productWorkflow[@product='Air']/journeyIndex_=_0/_/sessionWorkflow/productWorkflow[@product='Air']/date_=_2012-07-16" value="Next day" />
 </td>
 </tr>
 
@@ -435,7 +428,7 @@ Mon,&nbsp;02&nbsp;Jul<br />
 <tr>
 <td class="sectionheader">
 Select a flight for your inbound journey,
-Lisbon - Luanda
+Luanda - Brussels
 </td>
 </tr>
 
@@ -459,7 +452,7 @@ Lisbon - Luanda
 <th class="header block time" colspan="3">Time</th>
  
 
-<th class="header block fmt1"><a onclick="javascript:window.open('http://www.taag.com/en/virtual-cabins.aspx','Fare_types','').focus();return false;" href="http://www.taag.com/en/virtual-cabins.aspx">Semiflex</a></th>
+<th class="header block fmt1"><a onclick="javascript:window.open('http://www.taag.com/en/virtual-cabins.aspx','Fare_types','').focus();return false;" href="http://www.taag.com/en/virtual-cabins.aspx">Saver</a></th>
 
 <th class="header block fmt2"><a onclick="javascript:window.open('http://www.taag.com/en/virtual-cabins.aspx','Fare_types','').focus();return false;" href="http://www.taag.com/en/virtual-cabins.aspx">Flex</a></th>
 
@@ -481,11 +474,11 @@ Lisbon - Luanda
 
 
 
-<a href="https://taag.sita.aero/itd/itd/lang/en/travel/journeys/DT-651-LIS-LAD-20120709">DT651</a>
+<a href="https://taag.sita.aero/itd/itd/lang/en/travel/journeys/DT-6360-LAD-BRU-20120722">DT6360</a>
 
 
 
-</span>
+<span title="Operated&nbsp;for&nbsp;Angola&nbsp;Airlines&nbsp;by&nbsp;a&nbsp;partner&nbsp;airline">(!)</span></span>
 
 <br />
 <span class="serviceclass">              
@@ -495,14 +488,14 @@ Lisbon - Luanda
 
 </td>
 <td class="data block location">
-<span class="origin">Lisbon</span><br />
-<span class="destination">Luanda</span>
+<span class="origin">Luanda</span><br />
+<span class="destination">Brussels&nbsp;-&nbsp;National</span>
 </td>
 
 
 
 <td class="data block time">
-Mon,&nbsp;09&nbsp;Jul<br />
+Sun,&nbsp;22&nbsp;Jul<br />
 
 
 &nbsp;
@@ -512,20 +505,20 @@ Mon,&nbsp;09&nbsp;Jul<br />
 
 
 <td colspan="2" class="data block time">
-<span class="depart">11:00</span><br />
-<span class="arrive">18:30</span>
+<span class="depart">19:25</span><br />
+<span class="arrive">07:00</span> (+1)
 </td>
 
 
 
 <td class="data block matrix headlineonewayprice fmt1">
-<input type="radio" class="radio" name="/sessionWorkflow/productWorkflow[@product='Air']/selectedBinding[2]/@id" value="i3qs7if3ych6" id="i3qs7if3ych6" onclick="javascript:bind()" checked="checked" />
-<a title="Rules and Restrictions" alt="Rules and Restrictions" href="https://taag.sita.aero/itd/itd/AirJourneyTariffBindingDetail?requestor=itd%2epresentation%2ehandler%2epage%2eair%2ePresAirJourneyTariffLedAvailabilityPageHandler&amp;%2fsessionWorkflow%2fproductWorkflow%5b%40product%3d%27Air%27%5d%2fselectedJourneyTariffBinding%2f%40id=i3qs7if3ych6">USD 911.00</a>
+<input type="radio" class="radio" name="/sessionWorkflow/productWorkflow[@product='Air']/selectedBinding[2]/@id" value="zkvillxwiftb" id="zkvillxwiftb" onclick="javascript:bind()" checked="checked" />
+<a title="Rules and Restrictions" alt="Rules and Restrictions" href="https://taag.sita.aero/itd/itd/AirJourneyTariffBindingDetail?requestor=itd%2epresentation%2ehandler%2epage%2eair%2ePresAirJourneyTariffLedAvailabilityPageHandler&amp;%2fsessionWorkflow%2fproductWorkflow%5b%40product%3d%27Air%27%5d%2fselectedJourneyTariffBinding%2f%40id=zkvillxwiftb">EUR 400,00</a>
 </td>
 
 <td class="data block matrix headlineonewayprice fmt2">
-<input type="radio" class="radio" name="/sessionWorkflow/productWorkflow[@product='Air']/selectedBinding[2]/@id" value="i3qs7if3ych7" id="i3qs7if3ych7" onclick="javascript:bind()" />
-<a title="Rules and Restrictions" alt="Rules and Restrictions" href="https://taag.sita.aero/itd/itd/AirJourneyTariffBindingDetail?requestor=itd%2epresentation%2ehandler%2epage%2eair%2ePresAirJourneyTariffLedAvailabilityPageHandler&amp;%2fsessionWorkflow%2fproductWorkflow%5b%40product%3d%27Air%27%5d%2fselectedJourneyTariffBinding%2f%40id=i3qs7if3ych7">USD 1,225.00</a>
+<input type="radio" class="radio" name="/sessionWorkflow/productWorkflow[@product='Air']/selectedBinding[2]/@id" value="zkvillxwiftc" id="zkvillxwiftc" onclick="javascript:bind()" />
+<a title="Rules and Restrictions" alt="Rules and Restrictions" href="https://taag.sita.aero/itd/itd/AirJourneyTariffBindingDetail?requestor=itd%2epresentation%2ehandler%2epage%2eair%2ePresAirJourneyTariffLedAvailabilityPageHandler&amp;%2fsessionWorkflow%2fproductWorkflow%5b%40product%3d%27Air%27%5d%2fselectedJourneyTariffBinding%2f%40id=zkvillxwiftc">EUR 1 000,00</a>
 </td>
 
 
@@ -541,7 +534,7 @@ Mon,&nbsp;09&nbsp;Jul<br />
 
 <tr class="footerrow">
 <td colspan="8" class="footer first">
-<input class="submit button wide" type="submit" name="_handler=itd.presentation.handler.request.air.PresAirJourneyTariffLedSearchPreviousDayRequestHandler/_xpath=/sessionWorkflow/productWorkflow[@product='Air']/tripJourneyTariffAvailability/journeyTariffAvailability[2]/_/sessionWorkflow/productWorkflow[@product='Air']/journeyIndex_=_1/_/sessionWorkflow/productWorkflow[@product='Air']/date_=_2012-07-08" value="Previous day" />&nbsp;<input class="submit button wide" type="submit" name="_handler=itd.presentation.handler.request.air.PresAirJourneyTariffLedSearchNextDayRequestHandler/_xpath=/sessionWorkflow/productWorkflow[@product='Air']/tripJourneyTariffAvailability/journeyTariffAvailability[2]/_/sessionWorkflow/productWorkflow[@product='Air']/journeyIndex_=_1/_/sessionWorkflow/productWorkflow[@product='Air']/date_=_2012-07-10" value="Next day" />
+<input class="submit button wide" type="submit" name="_handler=itd.presentation.handler.request.air.PresAirJourneyTariffLedSearchPreviousDayRequestHandler/_xpath=/sessionWorkflow/productWorkflow[@product='Air']/tripJourneyTariffAvailability/journeyTariffAvailability[2]/_/sessionWorkflow/productWorkflow[@product='Air']/journeyIndex_=_1/_/sessionWorkflow/productWorkflow[@product='Air']/date_=_2012-07-21" value="Previous day" />&nbsp;<input class="submit button wide" type="submit" name="_handler=itd.presentation.handler.request.air.PresAirJourneyTariffLedSearchNextDayRequestHandler/_xpath=/sessionWorkflow/productWorkflow[@product='Air']/tripJourneyTariffAvailability/journeyTariffAvailability[2]/_/sessionWorkflow/productWorkflow[@product='Air']/journeyIndex_=_1/_/sessionWorkflow/productWorkflow[@product='Air']/date_=_2012-07-23" value="Next day" />
 </td>
 </tr>
 
@@ -566,7 +559,7 @@ Mon,&nbsp;09&nbsp;Jul<br />
 
 
 
-<div id="totaltriptariff0"><div id="toti3qs7if3ych8" style="display:inline" class="totalreturnprice">Total price including tax: USD 1,815.40&nbsp;<input class="submit button" type="submit" name="_handler=itd.presentation.handler.request.air.PresAirTripJourneyTariffBindingDetailRequestHandler/_xpath=/sessionWorkflow/productWorkflow[@product='Air']/tripJourneyTariffAvailability/_/sessionWorkflow/productWorkflow[@product='Air']/selectedTripJourneyTariffBinding/@id_=_i3qs7if3ycif" value="Rules" /></div><div id="toti3qs7if3ychi" style="display:none" class="totalreturnprice">Total price including tax: USD 2,128.40&nbsp;<input class="submit button" type="submit" name="_handler=itd.presentation.handler.request.air.PresAirTripJourneyTariffBindingDetailRequestHandler/_xpath=/sessionWorkflow/productWorkflow[@product='Air']/tripJourneyTariffAvailability/_/sessionWorkflow/productWorkflow[@product='Air']/selectedTripJourneyTariffBinding/@id_=_i3qs7if3ycig" value="Rules" /></div><div id="toti3qs7if3ychs" style="display:none" class="totalreturnprice">Total price including tax: USD 2,334.40&nbsp;<input class="submit button" type="submit" name="_handler=itd.presentation.handler.request.air.PresAirTripJourneyTariffBindingDetailRequestHandler/_xpath=/sessionWorkflow/productWorkflow[@product='Air']/tripJourneyTariffAvailability/_/sessionWorkflow/productWorkflow[@product='Air']/selectedTripJourneyTariffBinding/@id_=_i3qs7if3ycih" value="Rules" /></div><div id="toti3qs7if3yci2" style="display:none" class="totalreturnprice">Total price including tax: USD 2,647.40&nbsp;<input class="submit button" type="submit" name="_handler=itd.presentation.handler.request.air.PresAirTripJourneyTariffBindingDetailRequestHandler/_xpath=/sessionWorkflow/productWorkflow[@product='Air']/tripJourneyTariffAvailability/_/sessionWorkflow/productWorkflow[@product='Air']/selectedTripJourneyTariffBinding/@id_=_i3qs7if3ycii" value="Rules" /></div><div id="totaltriptariffempty0" style="display:none">No fare available</div></div>
+<div id="totaltriptariff0"><div id="totzkvillxwiftd" style="display:inline" class="totalreturnprice">Total price including tax: EUR 1 702,03&nbsp;<input class="submit button" type="submit" name="_handler=itd.presentation.handler.request.air.PresAirTripJourneyTariffBindingDetailRequestHandler/_xpath=/sessionWorkflow/productWorkflow[@product='Air']/tripJourneyTariffAvailability/_/sessionWorkflow/productWorkflow[@product='Air']/selectedTripJourneyTariffBinding/@id_=_zkvillxwiftw" value="Rules" /></div><div id="totzkvillxwiftl" style="display:none" class="totalreturnprice">Total price including tax: EUR 2 302,03&nbsp;<input class="submit button" type="submit" name="_handler=itd.presentation.handler.request.air.PresAirTripJourneyTariffBindingDetailRequestHandler/_xpath=/sessionWorkflow/productWorkflow[@product='Air']/tripJourneyTariffAvailability/_/sessionWorkflow/productWorkflow[@product='Air']/selectedTripJourneyTariffBinding/@id_=_zkvillxwiftx" value="Rules" /></div><div id="totaltriptariffempty0" style="display:none">No fare available</div></div>
 
 </td>
 </tr>
@@ -594,7 +587,7 @@ Mon,&nbsp;09&nbsp;Jul<br />
 
 
 
-<tr><td class="sectionfooter">(+1) Flight departs/arrives one day later</td></tr>
+<tr><td class="sectionfooter">(!) Indicates a flight operated by a partner airline<br />(+1) Flight departs/arrives one day later</td></tr>
 
   
 <tr>
@@ -797,7 +790,7 @@ if (self.bindTotal) bindTotal(comb);
 </script>
 <script language="JavaScript" type="text/javascript">
 <!--
-var totals=new Array();totals[0]=new Array('i3qs7if3ych4i3qs7if3ych6','toti3qs7if3ych8','i3qs7if3ych4i3qs7if3ych7','toti3qs7if3ychi','i3qs7if3ych5i3qs7if3ych6','toti3qs7if3ychs','i3qs7if3ych5i3qs7if3ych7','toti3qs7if3yci2');
+var totals=new Array();totals[0]=new Array('zkvillxwiftazkvillxwiftb','totzkvillxwiftd','zkvillxwiftazkvillxwiftc','totzkvillxwiftl');
 //-->
 </script>
 <script language="JavaScript" type="text/javascript">

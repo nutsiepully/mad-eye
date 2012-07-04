@@ -1,9 +1,9 @@
 HTTP/1.1 200 OK
-Date: Sat, 30 Jun 2012 19:41:04 GMT
+Date: Wed, 04 Jul 2012 22:24:38 GMT
 Server: Apache
 Expires: Tue, 01 Jul 2003 00:00:00 GMT
 Cache-Control: no-store, max-age=0, no-cache, must-revalidate
-Set-Cookie: JSESSIONID=3D604E959BA03EA9A899943496DAB3F6.GUECOM10P-Z2; Path=/itd; Secure; HttpOnly
+Set-Cookie: JSESSIONID=C98E831CCF7BD8DFC9A7E638BA204929.GUECOM10P-Z2; Path=/itd; Secure; HttpOnly
 Vary: Accept-Encoding,User-Agent
 Transfer-Encoding: chunked
 Content-Type: text/html;charset=UTF-8
