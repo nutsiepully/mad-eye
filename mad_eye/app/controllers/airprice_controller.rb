@@ -37,7 +37,7 @@ class AirpriceController < ApplicationController
     price_competitor_airline_business = PriceFinder.find_for request_competitor_airline_business
 
     @result = price_main_airline_economy.to_s + "," + price_main_airline_business.to_s + "," +
-        price_competitor_airline_economy + "," + price_competitor_airline_business
+        price_competitor_airline_economy.to_s + "," + price_competitor_airline_business.to_s
 	end
 
 end
