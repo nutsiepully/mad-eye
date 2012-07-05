@@ -2,6 +2,7 @@
 class PriceScraperFactory
 
   @@price_scrapers = {
+      :TEST => TestPriceScraper.new,
       :TAAG => TaagPriceScraper.new,
       :TAP => TapPriceScraper.new
   }

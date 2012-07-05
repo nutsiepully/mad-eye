@@ -14,12 +14,14 @@
 ActiveRecord::Schema.define(:version => 20120702211246) do
 
   create_table "prices", :force => true do |t|
-    t.string   "hash"
+    t.string   "context_hash"
     t.float    "onward_price"
     t.float    "return_price"
     t.float    "final_price"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
+
+  add_index "prices", ["context_hash"], :name => "index_prices_on_context_hash"
 
 end
