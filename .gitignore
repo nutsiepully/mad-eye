@@ -1,0 +1,10 @@
+.settings/
+*.iml
+*.ipr
+*.iws
+.idea
+*.class
+*.eml
+.DS_Store
+*.log*
+*.gem
