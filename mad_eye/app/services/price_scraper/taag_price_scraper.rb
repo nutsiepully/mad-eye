@@ -1,12 +1,6 @@
 
 module PriceScraper
 
-  class String
-    def strip_special_chars
-      self.gsub(/[^0-9A-Za-z,. ]/, '')
-    end
-  end
-
   class TaagPriceScraper
 
     @@user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.43 Safari/536.11"
@@ -17,6 +11,7 @@ module PriceScraper
     ]
 
     def scrape price_request
+      @price_request = price_request
       url = form_url price_request
       curl_url url
       prices = parse
@@ -25,15 +20,43 @@ module PriceScraper
 
     private
 
+    NOT_AVAILABLE_PRICES = [-1, -1, -1]
+
     def parse
       doc = Nokogiri::HTML(open(dump_file_path))
 
-      return [-1, -1, -1] if doc.css('span.error').nil? && doc.css('img.errorimage').nil?
+      return NOT_AVAILABLE_PRICES if doc.css('span.error').nil? && doc.css('img.errorimage').nil?
 
-      onward_price = doc.css('td > div[@id = "jnytar1"]').first.css('td.headlineonewayprice > input[checked = "checked"].radio').first.parent.css('a').text.strip_special_chars
-      return_price = doc.css('td > div[@id = "jnytar2"]').first.css('td.headlineonewayprice > input[checked = "checked"].radio').first.parent.css('a').text.strip_special_chars
-      final_price = doc.css('td.totalled').css('div[style = "display:inline"].totalreturnprice').text.slice(/:.*/).strip.gsub(/:/, "").strip_special_chars
+      onward_price = strip_special_chars(doc.css('td > div[@id = "jnytar1"]').first.css('td.headlineonewayprice > input[checked = "checked"].radio').first.parent.css('a').text)
+      return_price = strip_special_chars(doc.css('td > div[@id = "jnytar2"]').first.css('td.headlineonewayprice > input[checked = "checked"].radio').first.parent.css('a').text)
+      final_price = strip_special_chars(doc.css('td.totalled').css('div[style = "display:inline"].totalreturnprice').text.slice(/:.*/).strip.gsub(/:/, ""))
+
+      onward_price = convert_to_num_price onward_price
+      return_price = convert_to_num_price return_price
+      final_price = convert_to_num_price final_price
+
       [ onward_price, return_price, final_price ]
+    rescue => e
+      Rails.logger.error "Error occurred while fetching prices - " + @price_request.inspect
+      Rails.logger.error e.message
+      Rails.logger.error e.backtrace.join "\n"
+      NOT_AVAILABLE_PRICES
+    end
+
+    def convert_to_num_price price_str
+      price_str.gsub(/[^\d\.]/, '').to_f
+    end
+
+    def strip_special_chars str
+      str.gsub(/[^0-9A-Za-z,. ]/, '')
+    end
+
+    def dump_file_path
+      "log/#{self.class}"
+    end
+
+    def dump_header_path
+      "log/#{self.class}_header"
     end
 
     def header_command_string
@@ -45,16 +68,8 @@ module PriceScraper
       puts "Curling  : #{curl_command}"
       Rails.logger.info "Curling  : #{curl_command}"
 
-      `rm cookie.file`
+      `rm log/cookie.file`
       `#{curl_command}`
-    end
-
-    def dump_file_path
-      "log/#{self.class}"
-    end
-
-    def dump_header_path
-      "log/#{self.class}_header"
     end
 
     def form_url price_request
