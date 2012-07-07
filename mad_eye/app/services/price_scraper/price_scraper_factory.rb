@@ -14,6 +14,7 @@ module PriceScraper
     }
 
     def self.get airline
+      #return TestPriceScraper.new
       @@price_scrapers[airline.upcase.to_sym]
     end
 

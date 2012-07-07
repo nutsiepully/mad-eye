@@ -2,9 +2,13 @@
 class AirpriceController < ApplicationController
 
   rescue_from StandardError do |error|
-    logger.error error.message
-    logger.error error.backtrace.join "\n"
-    render :nothing => "ERROR : #{error}", :status => 200
+    log_error error
+    render :text => "ERROR : This is embarrassing :-( We are looking into it!", :status => 500
+  end
+
+  rescue_from ArgumentError do |error|
+    log_error error
+    render :text => "ERROR : #{error.message}", :status => 400
   end
 
   @@dummy = '100,100,200,200,200,450,90,90,200,150,150,350'
@@ -39,5 +43,12 @@ class AirpriceController < ApplicationController
     @result = price_main_airline_economy.to_s + "," + price_main_airline_business.to_s + "," +
         price_competitor_airline_economy.to_s + "," + price_competitor_airline_business.to_s
 	end
+
+  private
+
+  def log_error error
+    logger.error error.message
+    logger.error error.backtrace.join "\n"
+  end
 
 end
