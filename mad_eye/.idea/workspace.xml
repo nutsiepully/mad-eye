@@ -79,7 +79,7 @@
       <file leaf-file-name="taag_price_scraper.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/services/price_scraper/taag_price_scraper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="46" selection-start="1558" selection-end="1558" vertical-scroll-proportion="0.40705562">
+            <state line="38" column="5" selection-start="1460" selection-end="1460" vertical-scroll-proportion="0.63364995">
               <folding />
             </state>
           </provider>
@@ -133,7 +133,7 @@
       <file leaf-file-name="price_finder.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/services/price_finder/price_finder.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="57" selection-start="244" selection-end="244" vertical-scroll-proportion="0.0">
+            <state line="9" column="0" selection-start="319" selection-end="319" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -1039,13 +1039,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/services/price_finder/price_finder.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="57" selection-start="244" selection-end="244" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/services/price_scraper/price_scraper_factory.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="13" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0">
@@ -1088,9 +1081,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/services/price_finder/price_finder.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="319" selection-end="319" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/services/price_scraper/taag_price_scraper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="46" selection-start="1558" selection-end="1558" vertical-scroll-proportion="0.40705562">
+        <state line="38" column="5" selection-start="1460" selection-end="1460" vertical-scroll-proportion="0.63364995">
           <folding />
         </state>
       </provider>

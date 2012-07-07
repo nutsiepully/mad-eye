@@ -3,6 +3,8 @@ module PriceScraper
 
   class TaagPriceScraper
 
+    @@not_available_prices = [-1, -1, -1]
+
     @@user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.43 Safari/536.11"
 
     @@headers = [
@@ -15,17 +17,16 @@ module PriceScraper
       url = form_url price_request
       curl_url url
       prices = parse
-      Price.get_price_object price_request.request_hash, prices[0], prices[1], prices[2]
+      [ Price.get_price_object(price_request.request_hash, prices[0], prices[1], prices[2])]
     end
 
-    private
 
-    NOT_AVAILABLE_PRICES = [-1, -1, -1]
+    private
 
     def parse
       doc = Nokogiri::HTML(open(dump_file_path))
 
-      return NOT_AVAILABLE_PRICES if doc.css('span.error').nil? && doc.css('img.errorimage').nil?
+      return @@not_available_prices if doc.css('span.error').nil? && doc.css('img.errorimage').nil?
 
       onward_price = strip_special_chars(doc.css('td > div[@id = "jnytar1"]').first.css('td.headlineonewayprice > input[checked = "checked"].radio').first.parent.css('a').text)
       return_price = strip_special_chars(doc.css('td > div[@id = "jnytar2"]').first.css('td.headlineonewayprice > input[checked = "checked"].radio').first.parent.css('a').text)
@@ -40,7 +41,7 @@ module PriceScraper
       Rails.logger.error "Error occurred while fetching prices - " + @price_request.inspect
       Rails.logger.error e.message
       Rails.logger.error e.backtrace.join "\n"
-      NOT_AVAILABLE_PRICES
+      @@not_available_prices
     end
 
     def convert_to_num_price price_str
