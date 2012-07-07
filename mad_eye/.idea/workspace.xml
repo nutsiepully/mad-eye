@@ -101,7 +101,7 @@
       <file leaf-file-name="airprice_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/airprice_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="41" selection-start="1529" selection-end="1529" vertical-scroll-proportion="0.7">
+            <state line="17" column="47" selection-start="422" selection-end="422" vertical-scroll-proportion="0.34">
               <folding />
             </state>
           </provider>
@@ -1049,7 +1049,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/airprice_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="41" selection-start="1529" selection-end="1529" vertical-scroll-proportion="0.7">
+        <state line="17" column="47" selection-start="422" selection-end="422" vertical-scroll-proportion="0.34">
           <folding />
         </state>
       </provider>
