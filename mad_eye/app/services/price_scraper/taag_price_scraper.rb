@@ -17,7 +17,7 @@ module PriceScraper
       url = form_url price_request
       curl_url url
       prices = parse
-      [ Price.get_price_object(price_request.request_hash, prices[0], prices[1], prices[2])]
+      [ Price.get_price_object(price_request.request_hash, prices[0], prices[1], prices[2]) ]
     end
 
 
