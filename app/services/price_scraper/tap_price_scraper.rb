@@ -1,12 +1,12 @@
 module PriceScraper
   class TapPriceScraper
-    @@not_available_prices = [-1, -1, -1]
+    @@not_available_prices = [-1, -1, -1, -1, -1, -1]
 
     @@user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.43 Safari/536.11"
 
     @@headers = [
-      "Accept-Language: en-US,en;q=0.8",
-      "Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.3"
+        "Accept-Language: en-US,en;q=0.8",
+        "Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.3"
     ]
 
     def scrape price_request
@@ -14,23 +14,32 @@ module PriceScraper
       url = form_url price_request
       curl_url url
       prices = parse
-      [ Price.get_price_object(price_request.request_hash, prices[0], prices[1], prices[2])]
+      price_request.travel_class = "economy"
+      @price_request_ex = price_request.clone
+      @price_request_ex.travel_class = "business"
+
+      [ Price.get_price_object(price_request.request_hash, prices[0], prices[1], prices[2]),
+       Price.get_price_object(@price_request_ex.request_hash, prices[3], prices[4], prices[5]) ]
     end
 
-    def parseNormal doc
-      return doc.css('td.farePrice >table.innerCell').css('td > input[checked]').first.parent.parent.css('label').text.stripSpclChars.strip
+    def parse_normal doc
+      return strip_special_chars(doc.css('td.farePrice >table.innerCell').css('td > input[checked]').first.parent.parent.css('label').text)
     end
 
-    def parseExecutive doc
-      price3 = "9999999999999999999999999999999999999999"
+    def parse_executive doc
+      low_price = nil
       doc.css('tr').each do |eachRow|
-        executiveField =  eachRow.css('td.farePrice > table.innerCell').last#.css('td > input')#.first.parent.parent.css('label').text.stripSpclChars.strip
-        if(!executiveField.nil?)
-          price_tmp = executiveField.css('td > input').first.parent.parent.css('label').text.stripSpclChars.strip
-          price3 = compare(price3,price_tmp)
+        executiveField = eachRow.css('td.farePrice > table.innerCell').last
+        if (!executiveField.nil?)
+          price_tmp = strip_special_chars(executiveField.css('td > input').first.parent.parent.css('label').text)
+          if low_price.nil?
+            low_price = price_tmp
+          else
+            low_price = get_lower(low_price, price_tmp)
+          end
         end
       end
-      return price3
+      return low_price
     end
 
     private
@@ -38,31 +47,43 @@ module PriceScraper
     def parse
       doc = Nokogiri::HTML(open(dump_file_path))
 
-      return @@not_available_prices if doc.css('div[@id="ctl00_Body_ErrorInfoBox_ErrorPanel"]').nil? ||
-      doc.css('div[@id="ctl00_Body_ErrorInfoBox_ErrorPanel"]').empty?
+      if (!doc.css('div[@id="ctl00_Body_ErrorInfoBox_ErrorPanel"]').nil?)
+        return @@not_available_prices if !doc.css('div[@id="ctl00_Body_ErrorInfoBox_ErrorPanel"]').empty?
+      end
 
-      onward_price = strip_special_chars(parseNormal doc.css('table.ffTable').first)
-      return_price = strip_special_chars(parseNormal doc.css('table.ffTable').last)
-      final_price = (Float(price1))+(Float(price2))
+      onward_price = strip_special_chars(parse_normal(doc.css('table.ffTable').first))
+      return_price = strip_special_chars(parse_normal(doc.css('table.ffTable').last))
+      final_price = (Float(onward_price))+(Float(return_price))
 
-      onward_price = convert_to_num_price onward_price
-      return_price = convert_to_num_price return_price
-      final_price = convert_to_num_price final_price
+      onward_price_ex = strip_special_chars(parse_executive(doc.css('table.ffTable').first))
+      return_price_ex = strip_special_chars(parse_executive(doc.css('table.ffTable').last))
+      final_price_ex = (Float(onward_price_ex))+(Float(return_price_ex))
 
-      [ onward_price, return_price, final_price ]
+      onward_price = convert_to_num_price(onward_price)
+      return_price = convert_to_num_price(return_price)
+
+      onward_price_ex = convert_to_num_price(onward_price_ex)
+      return_price_ex = convert_to_num_price(return_price_ex)
+
+      [onward_price, return_price, final_price, onward_price_ex, return_price_ex, final_price_ex]
+
     rescue => e
       Rails.logger.error "Error occurred while fetching prices - " + @price_request.inspect
       Rails.logger.error e.message
       Rails.logger.error e.backtrace.join "\n"
       @@not_available_prices
-      end
+    end
+
+    def get_lower(price1, price2)
+      return convert_to_num_price(price1)>convert_to_num_price(price2) ? price2 : price1
+    end
 
     def convert_to_num_price price_str
       price_str.gsub(/[^\d\.]/, '').to_f
     end
 
     def strip_special_chars str
-      str.gsub(/[^0-9A-Za-z,. ]/, '')
+      str.gsub(/[^0-9A-Za-z,. ]/, '').strip
     end
 
     def dump_file_path
