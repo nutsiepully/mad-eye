@@ -33,12 +33,14 @@ module PriceScraper
 
     def parse_normal doc
       #put in logic to not to return executive
-      doc.css('td.farePrice').each do |farePrice|
-        return nil if(farePrice.next_sibling.nil?)
+      all_fare_prices = doc.css('td.farePrice')
+      all_fare_prices.each do |farePrice|
+        next if(((all_fare_prices.index(farePrice) +1)% 5) == 0) #next if executive
         next if(farePrice.css('td > input[checked]').nil? || farePrice.css('td > input[checked]').empty?)
         return strip_special_chars(farePrice.css('td > input[checked]').first.parent.parent.css('label').text)
       end
     #return strip_special_chars(doc.css('td.farePrice >table.innerCell').css('td > input[checked]').first.parent.parent.css('label').text)
+    return nil
     end
 
     def parse_executive doc
