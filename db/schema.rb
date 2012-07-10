@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120702211246) do
+ActiveRecord::Schema.define(:version => 20120710215457) do
+
+  create_table "currencies", :force => true do |t|
+    t.string   "code"
+    t.string   "name"
+    t.float    "usd_conversion"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
   create_table "prices", :force => true do |t|
     t.string   "context_hash"

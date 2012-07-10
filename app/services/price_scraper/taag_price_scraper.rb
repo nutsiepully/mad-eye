@@ -28,13 +28,13 @@ module PriceScraper
 
       return @@not_available_prices if doc.css('span.error').nil? && doc.css('img.errorimage').nil?
 
-      onward_price = strip_special_chars(doc.css('td > div[@id = "jnytar1"]').first.css('td.headlineonewayprice > input[checked = "checked"].radio').first.parent.css('a').text)
-      return_price = strip_special_chars(doc.css('td > div[@id = "jnytar2"]').first.css('td.headlineonewayprice > input[checked = "checked"].radio').first.parent.css('a').text)
-      final_price = strip_special_chars(doc.css('td.totalled').css('div[style = "display:inline"].totalreturnprice').text.slice(/:.*/).strip.gsub(/:/, ""))
+      onward_price_str = strip_special_chars(doc.css('td > div[@id = "jnytar1"]').first.css('td.headlineonewayprice > input[checked = "checked"].radio').first.parent.css('a').text)
+      return_price_str = strip_special_chars(doc.css('td > div[@id = "jnytar2"]').first.css('td.headlineonewayprice > input[checked = "checked"].radio').first.parent.css('a').text)
+      final_price_str = strip_special_chars(doc.css('td.totalled').css('div[style = "display:inline"].totalreturnprice').text.slice(/:.*/).strip.gsub(/:/, ""))
 
-      onward_price = convert_to_num_price onward_price
-      return_price = convert_to_num_price return_price
-      final_price = convert_to_num_price final_price
+      onward_price = convert_to_num_price onward_price_str
+      return_price = convert_to_num_price return_price_str
+      final_price = convert_to_num_price final_price_str
 
       [ onward_price, return_price, final_price ]
     rescue => e
@@ -45,7 +45,14 @@ module PriceScraper
     end
 
     def convert_to_num_price price_str
-      price_str.gsub(/[^\d\.]/, '').to_f
+      currency_code = get_currency_code price_str
+      currency_value_str = price_str.gsub(/[^\d\.,]/, '')
+
+      Currency.get_for(currency_code, currency_value_str).value.to_s
+    end
+
+    def get_currency_code price_str
+      /[A-Z]{3}/.match(price_str).to_s
     end
 
     def strip_special_chars str
