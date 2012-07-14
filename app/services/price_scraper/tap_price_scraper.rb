@@ -5,8 +5,8 @@ module PriceScraper
     @@user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.43 Safari/536.11"
 
     @@headers = [
-      "Accept-Language: en-US,en;q=0.8",
-      "Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.3"
+        "Accept-Language: en-US,en;q=0.8",
+        "Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.3"
     ]
 
     def scrape price_request
@@ -18,15 +18,15 @@ module PriceScraper
       @price_request_ex = price_request.clone
       @price_request_ex.travel_class = "business"
 
-      [ Price.get_price_object(price_request.request_hash, prices[0], prices[1], prices[2]),
-        Price.get_price_object(@price_request_ex.request_hash, prices[3], prices[4], prices[5]) ]
+      [Price.get_price_object(price_request.request_hash, prices[0], prices[1], prices[2]),
+       Price.get_price_object(@price_request_ex.request_hash, prices[3], prices[4], prices[5])]
     end
 
     def parse_error doc
       if (!doc.css('div[@id="ctl00_Body_ErrorInfoBox_ErrorPanel"]').nil?)
         return false if !doc.css('div[@id="ctl00_Body_ErrorInfoBox_ErrorPanel"]').empty?
       end
-      return false  if(doc.css('td.farePrice').nil? || doc.css('td.farePrice').empty?)
+      return false if (doc.css('td.farePrice').nil? || doc.css('td.farePrice').empty?)
       Rails.logger.debug "Will look for the prices"
       return true
     end
@@ -35,20 +35,20 @@ module PriceScraper
       #put in logic to not to return executive
       all_fare_prices = doc.css('td.farePrice')
       all_fare_prices.each do |farePrice|
-        next if(((all_fare_prices.index(farePrice) +1)% 5) == 0) #next if executive
-        next if(farePrice.css('td > input[checked]').nil? || farePrice.css('td > input[checked]').empty?)
+        next if (((all_fare_prices.index(farePrice) +1)% 5) == 0) #next if executive
+        next if (farePrice.css('td > input[checked]').nil? || farePrice.css('td > input[checked]').empty?)
         return strip_special_chars(farePrice.css('td > input[checked]').first.parent.parent.css('label').text)
       end
-    #return strip_special_chars(doc.css('td.farePrice >table.innerCell').css('td > input[checked]').first.parent.parent.css('label').text)
-    return nil
+      #return strip_special_chars(doc.css('td.farePrice >table.innerCell').css('td > input[checked]').first.parent.parent.css('label').text)
+      return nil
     end
 
     def parse_executive doc
       low_price = nil
       doc.css('tr').each do |eachRow|
         executiveField = eachRow.css('td.farePrice').last #Only the last column is executive
-        next if(executiveField.nil?)
-        next if(!executiveField.css('div.availBP').nil? && !executiveField.css('div.availBP').empty?)
+        next if (executiveField.nil?)
+        next if (!executiveField.css('div.availBP').nil? && !executiveField.css('div.availBP').empty?)
         executiveField = executiveField.css('table.innerCell')
         if (!executiveField.nil?)
           price_tmp = strip_special_chars(executiveField.css('td > input').first.parent.parent.css('label').text)
@@ -68,11 +68,11 @@ module PriceScraper
 
       onward_price = strip_special_chars(parse_normal(doc.css('table.ffTable').first))
       return_price = strip_special_chars(parse_normal(doc.css('table.ffTable').last))
-      final_price = total_price(convert_to_num_price(onward_price),convert_to_num_price(return_price))
+      final_price = total_price(convert_to_num_price(onward_price), convert_to_num_price(return_price))
 
       onward_price_ex = strip_special_chars(parse_executive(doc.css('table.ffTable').first))
       return_price_ex = strip_special_chars(parse_executive(doc.css('table.ffTable').last))
-      final_price_ex = total_price(convert_to_num_price(onward_price_ex),convert_to_num_price(return_price_ex))
+      final_price_ex = total_price(convert_to_num_price(onward_price_ex), convert_to_num_price(return_price_ex))
 
       onward_price = convert_to_num_price(onward_price)
       return_price = convert_to_num_price(return_price)
@@ -87,7 +87,7 @@ module PriceScraper
       Rails.logger.error e.message
       Rails.logger.error e.backtrace.join "\n"
       @@not_available_prices
-      end
+    end
 
     #things below will go in an abstract class.
     def get_lower(price1, price2)
@@ -96,7 +96,7 @@ module PriceScraper
 
     def convert_to_num_price price_str
       if price_str.nil?
-      return -1
+        return -1
       end
       price_str.gsub(/[^\d\.]/, '').to_f
     end
@@ -107,14 +107,14 @@ module PriceScraper
       end
     end
 
-    def total_price(price1,price2)
-      return -1 if(price1 < 0 || price2 < 0)
+    def total_price(price1, price2)
+      return -1 if (price1 < 0 || price2 < 0)
       total = price1+price2
       total
     end
 
     def dump_file_path #tailed with AIRORGDSTYYYYMMDDYYYYMMDD
-      "log/#{self.class}_#{@price_request.request_hash.gsub("|","").gsub("-","")}"
+      "log/#{self.class}_#{@price_request.request_hash.gsub("|", "").gsub("-", "")}"
     end
 
     def dump_header_path

@@ -7,7 +7,7 @@ module PriceScraper
         :TEST => TestPriceScraper.new,
         :TAAG => TaagPriceScraper.new,
         :TAP => TapPriceScraper.new,
-        :SA => PriceScraper.new,
+        :SA => SaPriceScraper.new,
         :EK => PriceScraper.new,
         :ET => PriceScraper.new,
         :KQ => PriceScraper.new
