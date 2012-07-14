@@ -14,7 +14,7 @@ class Price < ActiveRecord::Base
   def self.find_valid_price_for_hash hash
     now = DateTime.now
     yesterday = DateTime.new now.year, now.month, (now.day - 1)
-    self.where(" context_hash = '#{hash}' and updated_at >= '#{yesterday}' ").first
+    self.where(" context_hash = '#{hash}' and updated_at >= '#{yesterday}' ").order("created_at DESC").first
   end
 
   def self.not_applicable_price hash

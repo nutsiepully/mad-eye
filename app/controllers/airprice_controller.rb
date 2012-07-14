@@ -25,6 +25,7 @@ class AirpriceController < ApplicationController
     destination        = params["destination"]
     onward_date_str    = params["onward_date"]
     return_date_str    = params["return_date"]
+    no_cache           = params.include? "no_cache"
 
     request_main_airline_economy =
         PriceFinder::PriceRequest.new main_airline, origin, destination, onward_date_str, return_date_str, :economy
@@ -35,10 +36,10 @@ class AirpriceController < ApplicationController
     request_competitor_airline_business =
         PriceFinder::PriceRequest.new competitor_airline, origin, destination, onward_date_str, return_date_str, :business
 
-    price_main_airline_economy = PriceFinder::PriceFinder.find_for request_main_airline_economy
-    price_main_airline_business = PriceFinder::PriceFinder.find_for request_main_airline_business
-    price_competitor_airline_economy = PriceFinder::PriceFinder.find_for request_competitor_airline_economy
-    price_competitor_airline_business = PriceFinder::PriceFinder.find_for request_competitor_airline_business
+    price_main_airline_economy = PriceFinder::PriceFinder.find_for request_main_airline_economy, no_cache
+    price_main_airline_business = PriceFinder::PriceFinder.find_for request_main_airline_business, no_cache
+    price_competitor_airline_economy = PriceFinder::PriceFinder.find_for request_competitor_airline_economy, no_cache
+    price_competitor_airline_business = PriceFinder::PriceFinder.find_for request_competitor_airline_business, no_cache
 
     @result = price_main_airline_economy.to_s + "," + price_main_airline_business.to_s + "," +
         price_competitor_airline_economy.to_s + "," + price_competitor_airline_business.to_s

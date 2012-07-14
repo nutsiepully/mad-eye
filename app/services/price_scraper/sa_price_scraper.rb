@@ -7,10 +7,11 @@ module PriceScraper
       curl_url price_request
       prices = parse
 
-      price_request.travel_class = "economy"
+      price_request_econ = price_request.clone
+      price_request_econ.travel_class = "economy"
       price_request_exec = price_request.clone
       price_request_exec.travel_class = "business"
-      [ Price.get_price_object(price_request.request_hash, prices[0], prices[1], prices[2]),
+      [ Price.get_price_object(price_request_econ.request_hash, prices[0], prices[1], prices[2]),
         Price.get_price_object(price_request_exec.request_hash, prices[3], prices[4], prices[5]) ]
     end
 
@@ -41,7 +42,7 @@ module PriceScraper
       price = doc.css('div.whiteOnBlue')[index].css("td.#{travel_class}Family > div").map(&:text).map(&:strip).delete_if { |s| s == "Sold Out" }.map { |s| s.gsub(/[^\d\.,]/, '') }.map(&:to_f).min
       price.nil? ? -1 : price
     rescue => e
-      Rails.logger.error "Error occurred while fetching prices - " + @price_request.inspect
+      Rails.logger.error "Error occurred while fetching prices - "
       Rails.logger.error e.message
       Rails.logger.error e.backtrace.join "\n"
       -1

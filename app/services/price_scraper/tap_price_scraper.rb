@@ -10,15 +10,15 @@ module PriceScraper
     ]
 
     def scrape price_request
-      @price_request = price_request
+      @price_request = price_request.clone
       url = form_url price_request
       curl_url url
       prices = parse
-      price_request.travel_class = "economy"
+      @price_request.travel_class = "economy"
       @price_request_ex = price_request.clone
       @price_request_ex.travel_class = "business"
 
-      [Price.get_price_object(price_request.request_hash, prices[0], prices[1], prices[2]),
+      [Price.get_price_object(@price_request.request_hash, prices[0], prices[1], prices[2]),
        Price.get_price_object(@price_request_ex.request_hash, prices[3], prices[4], prices[5])]
     end
 

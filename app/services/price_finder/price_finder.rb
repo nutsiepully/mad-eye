@@ -1,9 +1,11 @@
 module PriceFinder
   class PriceFinder
 
-    def self.find_for price_request
-      price = Price.find_valid_price_for_hash price_request.request_hash
-      return price if not price.nil?
+    def self.find_for price_request, no_cache = false
+      if !no_cache
+        price = Price.find_valid_price_for_hash price_request.request_hash
+        return price if not price.nil?
+      end
 
       price_scraper = PriceScraper::PriceScraperFactory.get price_request.airline
       prices = price_scraper.scrape price_request
