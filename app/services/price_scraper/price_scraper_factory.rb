@@ -8,8 +8,8 @@ module PriceScraper
         :TAAG => TaagPriceScraper.new,
         :TAP => TapPriceScraper.new,
         :SA => SaPriceScraper.new,
-        :EK => PriceScraper.new,
-        :ET => PriceScraper.new,
+        :EK => EkPriceScraper.new,
+        :ET => EtPriceScraper.new,
         :KQ => PriceScraper.new
     }
 
