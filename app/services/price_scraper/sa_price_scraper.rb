@@ -17,7 +17,6 @@ module PriceScraper
 
     def curl_url price_request
       curl_command = "curl --dump-header #{dump_header_path} --location 'http://www.flysaa.com/ao/en/flightSearch.action?request_locale=en_AO' --data 'selectedLang=EN&preferredClass=0&calendarSearchFlag=false&countrySeltd=IN&selectedProductIs=FTS&searchInput=Search&globalNoticeUrl=&localNoticeUrl=&country=AO&selLanguage=EN&voyagerNumber=&email=&mobileUser=false&departCity=#{price_request.origin}&destCity=#{price_request.destination}&departDay=#{day_string(price_request.onward_date)}&departMonthYear=#{month_year_string(price_request.onward_date)}&fromDate=#{date_string(price_request.onward_date)}&carHireDepMonthYear=#{month_year_string(price_request.onward_date)}&carHireDestMonthYear=#{month_year_string(price_request.return_date)}&chkReturn=on&tripType=R&destDay=#{day_string(price_request.return_date)}&returnMonthYear=#{month_year_string(price_request.return_date)}&toDate=#{date_string(price_request.return_date)}&flexible=false&adultPop=1&adultCount=1&childPop=0&childCount=0&infantPop=0&infantCount=0&flightClass=0&promoCode=&checkinDepartCity=&checkInMethod=PNR&FlightChecked=on&flightNumber=&departureCity=&destinationCity=&fromDateFLT=-1&pickupLoc=&txtpick_loc=&dropoffLoc=&txtdrop_loc=&pickDay=&pickMonthYear=&pickUpTime=0900&dropoffDay=&dropoffMonthYear=&dropOffTime=0900&carCountry=&txtcountry=' > #{dump_file_path}"
-      puts "Curling  : #{curl_command}"
       Rails.logger.info "Curling  : #{curl_command}"
 
       #`rm log/cookie.file`

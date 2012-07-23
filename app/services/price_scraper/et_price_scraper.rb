@@ -52,7 +52,8 @@ module PriceScraper
 
       prices = [ onward_economy_price, return_economy_price, total_economy_price,
        onward_business_price, return_business_price, total_business_price ]
-      prices.map do | price| CurrencyMapper::CurrencyMapper.map_to_usd(currency, price) end
+      prices.map! do |price| price.nil? ? -1 : price end
+      prices.map! do | price| CurrencyMapper::CurrencyMapper.map_to_usd(currency, price) end
     end
 
     def get_total_price price1, price2

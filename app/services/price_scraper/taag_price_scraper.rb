@@ -73,7 +73,6 @@ module PriceScraper
 
     def curl_url url, data = ''
       curl_command = "curl --dump-header #{dump_header_path} --cookie log/cookie.file --cookie-jar log/cookie.file #{header_command_string} --user-agent '#{@@user_agent}' --location '#{url}' > #{dump_file_path}"
-      puts "Curling  : #{curl_command}"
       Rails.logger.info "Curling  : #{curl_command}"
 
       `rm log/cookie.file`
