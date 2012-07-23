@@ -17,7 +17,8 @@ module CurrencyMapper
     public
 
     def self.map_to_usd input_currency, value
-      return value if input_currency.upcase == "USD"
+      return value if input_currency.blank? || input_currency.upcase == "USD" || value.blank? || value < 0.0
+
       value / get_currency_map[input_currency]
     end
 
