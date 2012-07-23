@@ -52,7 +52,12 @@ module PriceScraper
 
     def parse_from_file price_request, price_type
       doc = Nokogiri::HTML(open(file_name(price_request, price_type)))
-      price = doc.css('span.price').text.strip.gsub(/[^\d.]/, '').to_f
+      price = doc.css('span.price').first.text.strip.gsub(/[^\d.]/, '').to_f
+      currency = doc.css('span.price').first.text.strip[0..2]
+
+      return -1 if price == 0.0 or currency.blank?
+
+      price = CurrencyMapper::CurrencyMapper.map_to_usd currency, price
       price
     rescue => e
       Rails.logger.error "Error occurred while fetching prices - " + price_request.inspect
