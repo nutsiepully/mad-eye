@@ -82,7 +82,7 @@ module PriceScraper
     end
 
     def travel_class_string travel_class
-      travel_class.downcase == "economy" ? "0" : "1"
+      travel_class.to_s.downcase == "economy" ? "0" : "1"
     end
 
   end
