@@ -28,3 +28,5 @@ PriceScraper::*
 /tmp
 
 .project
+
+/log/*

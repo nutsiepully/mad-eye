@@ -40,3 +40,7 @@ gem 'jquery-rails'
 gem 'nokogiri'
 
 gem 'therubyracer'
+
+gem 'watir-webdriver'
+
+gem 'headless'
