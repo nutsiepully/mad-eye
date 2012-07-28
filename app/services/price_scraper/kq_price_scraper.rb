@@ -12,6 +12,7 @@ module PriceScraper
         @browser = Watir::Browser.new
 
         prices = [ "onward", "return", "total" ].map { |trip_type| fetch_price(price_request, trip_type) }
+
       rescue => e
         Rails.logger.error "Error occurred while fetching prices - " + price_request.inspect
         Rails.logger.error e.message
@@ -21,7 +22,7 @@ module PriceScraper
         @browser.close
         @headless.destroy
       end
-      prices
+      [ Price.get_price_object(price_request.request_hash, prices[0], prices[1], prices[2]) ]
     end
 
     def origin_string price_request, trip_type
@@ -76,11 +77,11 @@ module PriceScraper
             ? @browser.frame().td(:id => 'cell_3_3').text \
             : @browser.frame().td(:id => 'cell_3_0').text
 
-      price = price_text == "sold out" ? -1 : price_text.gsub(/[^\d\.]/, '')
+      price = price_text == "sold out" ? -1 : price_text.gsub(/[^\d\.]/, '').to_f
 
       price
     rescue => e
-      Rails.logger.error "Error occurred while fetching prices - " + @price_request.inspect
+      Rails.logger.error "Error occurred while fetching prices - " + price_request.inspect
       Rails.logger.error e.message
       Rails.logger.error e.backtrace.join "\n"
       -1

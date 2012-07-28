@@ -10,7 +10,7 @@ module PriceScraper
         :SA => SaPriceScraper.new,
         :EK => EkPriceScraper.new,
         :ET => EtPriceScraper.new,
-        :KQ => PriceScraper.new
+        :KQ => KqPriceScraper.new
     }
 
     def self.get airline
