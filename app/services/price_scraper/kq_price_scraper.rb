@@ -71,7 +71,7 @@ module PriceScraper
 
       @browser.button(:id => 'ctl00_cph_flightsearch_pagekqbookingengine_cmdGo').click
 
-      @browser.frame().wait_until_present(120)
+      @browser.frame().wait_until_present(180)
 
       price_text = trip_type == "total" \
             ? @browser.frame().td(:id => 'cell_3_3').text \
