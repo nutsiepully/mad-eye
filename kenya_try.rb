@@ -14,8 +14,8 @@ browser.radio(:id => 'ctl00_cph_flightsearch_pagekqbookingengine_rblBooking_0').
 browser.select(:id => 'ctl00_cph_flightsearch_pagekqbookingengine_lstFrom').select_value('LAD')
 browser.select(:id => 'ctl00_cph_flightsearch_pagekqbookingengine_lstTo').select_value('DXB')
 
-browser.text_field(:id => 'ctl00_cph_flightsearch_pagekqbookingengine_txtDepartureDate').set('03-08-2012')
-browser.text_field(:id => 'ctl00_cph_flightsearch_pagekqbookingengine_txtReturnDate').set('07-08-2012')
+browser.text_field(:id => 'ctl00_cph_flightsearch_pagekqbookingengine_txtDepartureDate').set('01-08-2012')
+browser.text_field(:id => 'ctl00_cph_flightsearch_pagekqbookingengine_txtReturnDate').set('11-08-2012')
 
 browser.select(:id => 'ctl00_cph_flightsearch_pagekqbookingengine_lstCabinClass').select_value('B')
 
