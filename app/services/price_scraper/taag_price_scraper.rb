@@ -26,7 +26,10 @@ module PriceScraper
     def parse
       doc = Nokogiri::HTML(open(dump_file_path))
 
-      return @@not_available_prices if doc.css('span.error').nil? && doc.css('img.errorimage').nil?
+      if (doc.css('span.error').nil? && doc.css('img.errorimage').nil?) || \
+          doc.css('td.infotextcell').text.start_with?("Flights were not available")
+        return @@not_available_prices
+      end
 
       onward_price_str = strip_special_chars(doc.css('td > div[@id = "jnytar1"]').first.css('td.headlineonewayprice > input[checked = "checked"].radio').first.parent.css('a').text)
       return_price_str = strip_special_chars(doc.css('td > div[@id = "jnytar2"]').first.css('td.headlineonewayprice > input[checked = "checked"].radio').first.parent.css('a').text)
