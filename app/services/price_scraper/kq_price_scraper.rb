@@ -6,7 +6,8 @@ module PriceScraper
   class KqPriceScraper
 
     def scrape price_request
-      prices = [ -1, -1, -1]
+			increment_try_count
+      prices = [ -1, -1, -1 ]
 
       begin
         prices = [ "onward", "return", "total" ].map { |trip_type| fetch_price(price_request, trip_type) }
@@ -16,8 +17,28 @@ module PriceScraper
         Rails.logger.error e.backtrace.join "\n"
       end
 
+			if prices_are_wrong(prices)
+				if @try_count < 2
+					return scrape price_request
+				else
+					prices = [ -1, -1, -1 ]
+				end
+			end
+
       [ Price.get_price_object(price_request.request_hash, prices[0], prices[1], prices[2]) ]
     end
+
+		def increment_try_count
+			@try_count = @try_count || 0
+			@try_count = @try_count + 1
+		end
+
+		def prices_are_wrong(prices)
+			return true if (prices[2] != -1 && (prices[0] == -1 || prices[1] == -1))
+			return true if (prices[0] != -1 && prices[1] != -1 && prices[2] == -1)
+
+			false
+		end
 
     def origin_string price_request, trip_type
       trip_type != "return" ? price_request.origin : price_request.destination
