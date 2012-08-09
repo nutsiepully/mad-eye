@@ -72,9 +72,9 @@ module PriceScraper
       browser.frame.wait_until_present
 
       if !one_way
-        puts browser.frame.td(:id => 'cell_3_3').text
+        price_text = browser.frame.td(:id => 'cell_3_3').text
       else
-        puts browser.frame.td(:id => 'cell_3_0').text
+        price_text = browser.frame.td(:id => 'cell_3_0').text
       end
 
 			puts "Fetched price text : " + price_text
