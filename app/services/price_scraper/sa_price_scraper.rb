@@ -16,11 +16,22 @@ module PriceScraper
     end
 
     def curl_url price_request
-      curl_command = "curl --dump-header #{dump_header_path} --location 'http://www.flysaa.com/ao/en/flightSearch.action?request_locale=en_AO' --data 'selectedLang=EN&preferredClass=0&calendarSearchFlag=false&countrySeltd=IN&selectedProductIs=FTS&searchInput=Search&globalNoticeUrl=&localNoticeUrl=&country=AO&selLanguage=EN&voyagerNumber=&email=&mobileUser=false&departCity=#{price_request.origin}&destCity=#{price_request.destination}&departDay=#{day_string(price_request.onward_date)}&departMonthYear=#{month_year_string(price_request.onward_date)}&fromDate=#{date_string(price_request.onward_date)}&carHireDepMonthYear=#{month_year_string(price_request.onward_date)}&carHireDestMonthYear=#{month_year_string(price_request.return_date)}&chkReturn=on&tripType=R&destDay=#{day_string(price_request.return_date)}&returnMonthYear=#{month_year_string(price_request.return_date)}&toDate=#{date_string(price_request.return_date)}&flexible=false&adultPop=1&adultCount=1&childPop=0&childCount=0&infantPop=0&infantCount=0&flightClass=0&promoCode=&checkinDepartCity=&checkInMethod=PNR&FlightChecked=on&flightNumber=&departureCity=&destinationCity=&fromDateFLT=-1&pickupLoc=&txtpick_loc=&dropoffLoc=&txtdrop_loc=&pickDay=&pickMonthYear=&pickUpTime=0900&dropoffDay=&dropoffMonthYear=&dropOffTime=0900&carCountry=&txtcountry=' > #{dump_file_path}"
+      curl_command = "curl --dump-header #{dump_header_path} --cookie log/sa_cookie.file --cookie-jar log/sa_cookie.file --location 'http://www.flysaa.com/ao/en/flightSearch.action?request_locale=en_AO' --data 'selectedLang=EN&preferredClass=0&calendarSearchFlag=false&countrySeltd=IN&selectedProductIs=FTS&searchInput=Search&globalNoticeUrl=&localNoticeUrl=&country=AO&selLanguage=EN&voyagerNumber=&email=&mobileUser=false&departCity=#{price_request.origin}&destCity=#{price_request.destination}&departDay=#{day_string(price_request.onward_date)}&departMonthYear=#{month_year_string(price_request.onward_date)}&fromDate=#{date_string(price_request.onward_date)}&carHireDepMonthYear=#{month_year_string(price_request.onward_date)}&carHireDestMonthYear=#{month_year_string(price_request.return_date)}&chkReturn=on&tripType=R&destDay=#{day_string(price_request.return_date)}&returnMonthYear=#{month_year_string(price_request.return_date)}&toDate=#{date_string(price_request.return_date)}&flexible=false&adultPop=1&adultCount=1&childPop=0&childCount=0&infantPop=0&infantCount=0&flightClass=0&promoCode=&checkinDepartCity=&checkInMethod=PNR&FlightChecked=on&flightNumber=&departureCity=&destinationCity=&fromDateFLT=-1&pickupLoc=&txtpick_loc=&dropoffLoc=&txtdrop_loc=&pickDay=&pickMonthYear=&pickUpTime=0900&dropoffDay=&dropoffMonthYear=&dropOffTime=0900&carCountry=&txtcountry=' > #{dump_file_path}"
       Rails.logger.info "Curling  : #{curl_command}"
 
       #`rm log/cookie.file`
       `#{curl_command}`
+
+      doc = Nokogiri::HTML(open(dump_file_path))
+			is_tax_page = false
+			begin
+			is_tax_page = doc.css('div > span').text.start_with?("Click continue to view the cheapest flight combination for the dates chosen")
+			rescue
+			end
+
+			return unless is_tax_page
+
+			`curl --cookie log/sa_cookie.file --cookie-jar log/sa_cookie.file --location 'http://www.flysaa.com/ao/en/flightSearch!getTDPnoTaxAvailability.action' > #{dump_file_path}`
     end
 
     def parse
