@@ -27,8 +27,8 @@ module PriceScraper
       doc = Nokogiri::HTML(open(dump_file_path(price_request)))
 
       begin
-        onward_economy_price = doc.css('td.price[id*="outbounds-E"] > em').map(&:text).map(&:strip).map(&:to_f).min
-        return_economy_price = doc.css('td.price[id*="inbounds-E"] > em').map(&:text).map(&:strip).map(&:to_f).min
+        onward_economy_price = doc.css('td.price[id*="td-outbounds-E"]').map(&:text).map(&:strip).map(&:to_f).min
+        return_economy_price = doc.css('td.price[id*="td-inbounds-E"]').map(&:text).map(&:strip).map(&:to_f).min
         total_economy_price = get_total_price onward_economy_price, return_economy_price
       rescue => e
         Rails.logger.error "Error occurred while fetching prices - " + price_request.inspect
@@ -38,8 +38,8 @@ module PriceScraper
       end
 
       begin
-        onward_business_price = doc.css('td.price[id*="outbounds-C"] > em').map(&:text).map(&:strip).map(&:to_f).min
-        return_business_price = doc.css('td.price[id*="inbounds-C"] > em').map(&:text).map(&:strip).map(&:to_f).min
+        onward_business_price = doc.css('td.price[id*="td-outbounds-C"]').map(&:text).map(&:strip).map(&:to_f).min
+        return_business_price = doc.css('td.price[id*="td-inbounds-C"]').map(&:text).map(&:strip).map(&:to_f).min
         total_business_price = get_total_price onward_business_price, return_business_price
       rescue => e
         Rails.logger.error "Error occurred while fetching prices - " + price_request.inspect

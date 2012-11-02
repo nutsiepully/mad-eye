@@ -10,6 +10,7 @@
 *.gem
 *cookie.file
 PriceScraper::*
+*.swp
 
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 #
