@@ -6,7 +6,8 @@ module PriceScraper
     @@price_scrapers = {
         :TEST => TestPriceScraper.new,
         :TAAG => TaagPriceScraper.new,
-        :TAP => TapPriceScraper.new,
+        :TAPOLD => TapPriceScraper.new,
+        :TAP => TapPriceScraperNew.new,
         :SA => SaPriceScraper.new,
         :EK => EkPriceScraper.new,
         :ET => EtPriceScraper.new,
