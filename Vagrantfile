@@ -48,6 +48,11 @@ Vagrant.configure("2") do |config|
   # View the documentation for the provider you're using for more
   # information on available options.
 
+  config.vm.provision :shell do |s|
+    s.path = "setup.sh"
+    s.args = "vagbox"
+  end
+
   # Enable provisioning with Puppet stand alone.  Puppet manifests
   # are contained in a directory path relative to this Vagrantfile.
   # You will need to create the manifests directory and a manifest in
@@ -66,12 +71,12 @@ Vagrant.configure("2") do |config|
   # #               Managed by Puppet.\n"
   # # }
   #
-  config.vm.provision :puppet do |puppet|
-    puppet.manifests_path = "manifests"
-    puppet.manifest_file  = "init.pp"
+  #config.vm.provision :puppet do |puppet|
+    #puppet.manifests_path = "manifests"
+    #puppet.manifest_file  = "init.pp"
     #puppet.module_path = "modules"
-    puppet.options = "--verbose --debug"
-  end
+    #puppet.options = "--verbose --debug"
+  #end
 
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
   # path, and data_bags path (all relative to this Vagrantfile), and adding

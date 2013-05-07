@@ -1,12 +1,11 @@
 
-group { "puppet":
-    ensure => "present",
-}
+include rvm
 
-File { owner => 0, group => 0, mode => 0644 }
+rvm::system_user { vagrant: ; }
 
-file { '/etc/motd':
-    content => "Welcome to your Vagrant-built virtual machine!
-        Managed by Puppet.\n"
+rvm_system_ruby {
+    'ruby-1.9.3-p286':
+        ensure => 'present',
+        default_use => true;
 }
 
