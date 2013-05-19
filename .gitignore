@@ -33,3 +33,5 @@ PriceScraper::*
 /log/*
 
 currency_rates
+
+.vagrant/
